@@ -1,0 +1,8 @@
+.idea
+.idea/*
+node_modules
+package-lock.json
+.expo
+.expo/*
+src/app/config/config.json
+app.json

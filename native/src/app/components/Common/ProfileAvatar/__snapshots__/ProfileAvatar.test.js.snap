@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component correctly 1`] = `
+<View
+  className="inline"
+>
+  <div
+    onClick={[Function]}
+  >
+    <Image
+      resizeMode="cover"
+      source={
+        Object {
+          "uri": "mock.jpg",
+        }
+      }
+      style={
+        Object {
+          "height": 50,
+          "width": NaN,
+        }
+      }
+    />
+  </div>
+</View>
+`;

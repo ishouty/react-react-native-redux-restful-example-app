@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileAvatarName Component should render match snap shot 1`] = `
+<div
+  className="inline"
+>
+  <div
+    className="profile-container"
+  >
+    <ProfileAvatar
+      profile={
+        Object {
+          "profileImage": "thumbnail.png",
+        }
+      }
+      size="large"
+    />
+    <div
+      className="profile-name"
+    >
+      <div
+        className="name"
+      >
+        mock name
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,44 @@
+//banner
+.banner {
+
+  &.fail {
+    background: @color-gray-line;
+  }
+
+  &.success {
+    background: @color-light-green;
+  }
+
+  position: fixed;
+  border-radius: 3px;
+  border: solid 0.5px #9b9b9b;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+  display: block;
+  max-width: 573px;
+  min-height: 30px;
+  font-size: 12px;
+  font: @fontMedium;
+  color: #544f58;
+  font-weight: bold;
+  min-width: 300px;
+  z-index: 3;
+  padding: 10px;
+  cursor: pointer;
+  left: 40%;
+
+  .message {
+    float: left;
+  }
+
+  .cross {
+    margin-left: 5px;
+    float: right;
+    font-weight: normal;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+
+  }
+
+}

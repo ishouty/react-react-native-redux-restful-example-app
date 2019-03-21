@@ -1,0 +1,41 @@
+@import "../Colors/index";
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+
+  .profile-name {
+    display: inline-block;
+    top: -12px;
+
+    .name {
+      top: 5px;
+      width: 130px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .name-nav {
+      .name;
+      color: @color-gray;
+    }
+  }
+
+  .work-position {
+    font-size: 11px;
+    position: relative;
+    font-weight: bold;
+    width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    color: @color-darker-gray-text;
+    height: 15px;
+
+  }
+
+}

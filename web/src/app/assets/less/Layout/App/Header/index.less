@@ -1,0 +1,35 @@
+@headerHeight: 40px;
+
+.header-container {
+  width: 100%;
+  height: @headerHeight;
+  background-color: @color-white;
+  border-bottom: 1px solid @color-light-gray;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+
+  i {
+    font-size: 1.5em;
+  }
+
+  .header-body {
+    margin: 0 auto;
+  }
+
+  /* Desktop */
+  @media only screen and (min-width: 1012px) {
+
+
+  }
+
+  /* Tablets */
+  @media only screen and (max-width: 768px) {
+
+    span {
+      display : none;
+    }
+
+  }
+
+}

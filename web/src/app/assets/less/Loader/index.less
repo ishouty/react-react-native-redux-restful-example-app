@@ -1,0 +1,38 @@
+@import '../Colors/index.less';
+@import '../Fonts/index.less';
+
+.btn {
+  padding: 12px 12px;
+  font-size: 12px;
+}
+
+.list-loader-container {
+
+  .list-loader-link {
+    margin-top: 10px;
+    padding-top: 10px;
+    display: table;
+    border-top: 0.5px solid @color-gray-line;
+    width: 100%;
+
+    a {
+      margin: 0 auto;
+      display: inherit;
+      font-size: 12px;
+      font-family: @fontBold;
+    }
+  }
+
+  .list-loader-progress {
+    margin: 5px 0;
+    z-index: 10;
+    left:45%;
+    position: relative;
+
+    &:before {
+      clear:both;
+    }
+  }
+
+}
+

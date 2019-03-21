@@ -1,0 +1,40 @@
+.three-col-container {
+  @main-container: 995px;
+  @leftContainerWidth: 155px;
+  @mainContainerWidth: 573px;
+  @rightContainerWidth: 237px;
+  @margin: 15px;
+
+  margin: 0px auto;
+  display: flex;
+  min-height: 100%;
+  max-width: @main-container;
+
+  .left-container, .main-container, .right-container {
+    display: inline-block;
+  }
+
+  .left-container {
+    position: fixed;
+    min-width: @leftContainerWidth;
+  }
+
+  .main-container {
+    left: @leftContainerWidth;
+    position: relative;
+
+    h2 {
+      font-size: 15px;
+      margin: 0px;
+    }
+
+    margin: 0px @margin;
+    min-width: @mainContainerWidth;
+  }
+
+  .right-container {
+    position: relative;
+    left: @leftContainerWidth;
+    min-width: @rightContainerWidth;
+  }
+}

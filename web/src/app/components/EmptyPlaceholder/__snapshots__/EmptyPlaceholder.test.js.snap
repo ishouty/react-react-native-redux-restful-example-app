@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmptyPlaceHolder Component should render and match snap shot 1`] = `
+<div
+  className="empty-placeholder"
+>
+  <div
+    className="img-container"
+  >
+    <img
+      src="/src.jpg"
+    />
+  </div>
+  <div
+    className="help-title"
+  >
+    sampletest
+  </div>
+  <div
+    className="help-detail"
+  >
+    example test detail
+  </div>
+</div>
+`;

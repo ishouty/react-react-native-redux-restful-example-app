@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProfileAvatar Component should render match snap shot 1`] = `
+<div
+  className="inline"
+>
+  <div
+    className="profile-avatar-medium"
+    style={
+      Object {
+        "backgroundImage": "url(profileImage.jpg)",
+      }
+    }
+  />
+</div>
+`;

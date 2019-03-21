@@ -1,0 +1,98 @@
+/* bootstrap overide */
+
+a {
+  cursor: pointer;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+.row {
+  text-align: left;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+//buttons
+
+.btn-default {
+  font-size: 1em;
+  width: 100%;
+}
+
+.truncate {
+  overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.three-dot-menu {
+  img {
+    float: right;
+    padding: 20px;
+    margin: -20px;
+    cursor: pointer;
+  }
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.horizontal-line {
+  border-top: 1px solid @color-gray-line;
+  padding: 0px;
+  margin: 0px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.base-appear {
+  opacity: 0.01;
+}
+
+.base-appear.base-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+
+.base-enter {
+  opacity: 0.01;
+}
+
+.base-enter.base-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.base-leave {
+  opacity: 1;
+}
+
+.base-leave.base-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.inline {
+  display: inline;
+}
+
+.error-block {
+  color: @color-red;
+}

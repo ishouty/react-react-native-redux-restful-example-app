@@ -1,0 +1,34 @@
+{
+  "expo": {
+    "name": "ishouty-sample-app",
+    "description": "demo app",
+    "slug": "ishouty-sample-app",
+    "platforms" : ["ios", "android"],
+    "privacy": "unlisted",
+    "sdkVersion": "30.0.0",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "primaryColor": "#cccccc",
+    "icon": "./src/app/assets/images/icon.png",
+    "splash": {
+      "image": "./src/app/assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    },
+    "loading": {
+      "icon": "./src/app/assets/images/icon.png",
+      "backgroundImage" : "./src/app/assets/images/splash.png"
+    },
+    "ios": {
+      "infoPlist": {
+        "NSAppTransportSecurity": {
+          "NSAllowsArbitraryLoads": false,
+          "NSExceptionAllowsInsecureHTTPLoads": false
+        },
+        "NSFaceIDUsageDescription": "Enabling Face ID allows you quick and secure access to your account."
+      },
+      "bundleIdentifier": "com.ishouty.local.ishouty-sample-app",
+      "supportsTablet": false
+    }
+  }
+}

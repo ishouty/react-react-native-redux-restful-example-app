@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NotFound Component should render match snap shot 1`] = `
+<div>
+  <div
+    className="page-not-found-container"
+  >
+    <Row
+      bsClass="row"
+      className="main-container"
+      componentClass="div"
+    >
+      <i
+        aria-hidden="true"
+        className="fa fa-frown-o"
+      />
+      <h3>
+        Opps! Something went wrong. Please try later!
+      </h3>
+    </Row>
+  </div>
+</div>
+`;

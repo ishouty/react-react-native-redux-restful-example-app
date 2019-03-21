@@ -1,0 +1,45 @@
+{
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "test": "node node_modules/.bin/jest --watch --updateSnapshot",
+    "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand"
+
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "transformIgnorePatterns": [
+      "node_modules/(?!(jest-)?react-native|jest-expo|react-navigation|react|react-clone-referenced-element|expo|@expo/*|exponent|@exponent/*)"
+    ]
+  },
+  "dependencies": {
+    "@expo/samples": "2.1.1",
+    "expo": "^30.0.0",
+    "expo-cli": "^2.4.0",
+    "install": "^0.10.4",
+    "moment": "^2.21.0",
+    "npm": "^5.6.0",
+    "prop-types": "^15.6.0",
+    "react": "16.3.1",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
+    "react-native-communications": "^2.2.1",
+    "react-native-dropdownalert": "^3.3.0",
+    "react-native-keyboard-aware-scroll-view": "^0.7.3", "react-native-loading-spinner-overlay": "^0.5.2",
+    "react-native-phone-call": "^1.0.4",
+    "react-native-svg-uri": "^1.2.3",
+    "redux-thunk": "^2.2.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "axios": "^0.18.0",
+    "jest-expo": "^30.0.0",
+    "react-navigation": "^1.5.11",
+    "react-navigation-redux-helpers": "^1.0.1",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.2.3",
+    "remote-redux-devtools": "^0.5.12",
+    "whatwg-fetch": "^2.0.4",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
