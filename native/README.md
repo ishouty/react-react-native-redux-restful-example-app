@@ -48,5 +48,3 @@
 2. [react navigation with redux](https://hackernoon.com/a-comprehensive-guide-for-integrating-react-navigation-with-redux-including-authentication-flow-cb7b90611adf)
 3. [react navigation screen intpolation](https://medium.com/async-la/custom-transitions-in-react-navigation-2f759408a053)
 4. [react navigation interpolation](https://stackoverflow.com/questions/43974979/react-native-react-navigation-transitions)
-5. [svg](http://tutorials.jenkov.com/svg/svg-coordinate-system.html)
-6. [text-svg](https://www.npmjs.com/package/text-to-svg)
