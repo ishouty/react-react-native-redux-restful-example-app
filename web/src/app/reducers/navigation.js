@@ -1,5 +1,5 @@
-import * as actionTypes from '../actions/actionTypes'
-import { NavigationLinkText } from '../constants/text/text'
+import * as actionTypes from "../actions/actionTypes"
+import { NavigationLinkText } from "../constants/text/text"
 
 export const initialState = {
     previousRoute: [],
@@ -7,27 +7,27 @@ export const initialState = {
         links: [
             {
                 title: NavigationLinkText.item1,
-                href: '/app/users',
-                className: 'nav-users',
-                icon: 'fa-user-circle-o'
+                href: "/app/users",
+                className: "nav-users",
+                icon: "fa-user-circle-o"
             },
             {
                 title: NavigationLinkText.item2,
-                href: '/app/female-users',
-                className: 'nav-female-users',
-                icon: 'fa-female'
+                href: "/app/female-users",
+                className: "nav-female-users",
+                icon: "fa-female"
             },
             {
                 title: NavigationLinkText.item3,
-                href: '/app/male-users',
-                className: 'nav-male-users',
-                icon: 'fa-male'
+                href: "/app/male-users",
+                className: "nav-male-users",
+                icon: "fa-male"
             },
             {
                 title: NavigationLinkText.item4,
-                href: '/sign-out',
-                className: 'nav-sign-out',
-                icon: 'fa-sign-out'
+                href: "/sign-out",
+                className: "nav-sign-out",
+                icon: "fa-sign-out"
             }
         ]
     }
@@ -48,10 +48,7 @@ export default function reducer(state = initialState, action = {}) {
                 previousRoute: items
             }
 
-            break;
-
         default:
             return state
     }
 }
-

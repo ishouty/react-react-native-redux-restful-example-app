@@ -3,7 +3,7 @@ import {connect} from "react-redux"
 import {Col, FormControl, HelpBlock, Row} from "react-bootstrap"
 import "react-select/dist/react-select.css"
 import * as Constants from "../../constants"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
 class BannerRightSection extends Component {
 
@@ -45,7 +45,7 @@ const renderFieldText = ({ id, input, label, type, disabled, placeholder, helpBl
 
     <div>
         {
-            disabled == 'true' ? <FormControl {...input} id={id} type={type} placeholder={placeholder} disabled/>
+            disabled == "true" ? <FormControl {...input} id={id} type={type} placeholder={placeholder} disabled/>
                 :
                 <FormControl {...input} id={id} type={type} placeholder={placeholder}/>
         }
@@ -93,13 +93,13 @@ class Banner extends Component {
 
     close() {
         const { dispatch } = this.props
-        dispatch({type: Constants.BANNER_NOTIFICATION, payload: {fail: false, success: false, message: ''}})
+        dispatch({type: Constants.BANNER_NOTIFICATION, payload: {fail: false, success: false, message: ""}})
     }
 
     render() {
         const { message, banner, bsClass } = this.props
-        let className = banner.fail ? 'fail' : 'success'
-        let displayMessage = banner.message !== '' ? banner.message : message
+        let className = banner.fail ? "fail" : "success"
+        let displayMessage = banner.message !== "" ? banner.message : message
 
         return (
             <div>

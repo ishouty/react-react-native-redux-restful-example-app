@@ -1,7 +1,7 @@
-import '@babel/polyfill'
-import React from 'react'
-import { render } from 'react-dom'
-import Root from './Root'
+import "@babel/polyfill"
+import React from "react"
+import { render } from "react-dom"
+import Root from "./Root"
 import "./assets/less/index.less"
 
 (function(history){
@@ -17,4 +17,4 @@ import "./assets/less/index.less"
 })(window.history)
 
 
-render(<Root />, document.getElementById('root'))
+render(<Root />, document.getElementById("root"))

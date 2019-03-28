@@ -1,19 +1,19 @@
-import React from 'react'
-import {Field, reduxForm} from 'redux-form'
-import {resetPassword} from '../../../actions/auth'
-import {browserHistory, Link} from 'react-router'
-import {ResetPasswordText, LoginText, CommonText} from '../../../constants/text/text'
-import {maxLength} from '../../../utils/HelperUtils'
-import {Button, FormGroup, FormControl, HelpBlock, Row, Col} from 'react-bootstrap'
+import React from "react"
+import {Field, reduxForm} from "redux-form"
+import {resetPassword} from "../../../actions/auth"
+import {browserHistory, Link} from "react-router"
+import {ResetPasswordText, LoginText, CommonText} from "../../../constants/text/text"
+import {maxLength} from "../../../utils/HelperUtils"
+import {Button, FormGroup, FormControl, HelpBlock, Row, Col} from "react-bootstrap"
 
 const validate = values => {
 
     const errors = {}
-    const requiredFields = ['email']
+    const requiredFields = ["email"]
 
     requiredFields.forEach(field => {
         if (!values[field]) {
-            errors[field] = 'Required'
+            errors[field] = "Required"
         }
     })
 
@@ -28,7 +28,7 @@ const renderFieldText = ({id, input, label, type, disabled, placeholder, helpBlo
 
     <div>
         {
-            disabled == 'true' ? <FormControl {...input} id={id} type={type} placeholder={placeholder} disabled/>
+            disabled == "true" ? <FormControl {...input} id={id} type={type} placeholder={placeholder} disabled/>
                 :
                 <FormControl {...input} id={id} type={type} placeholder={placeholder}/>
         }
@@ -98,7 +98,7 @@ const ResetPasswordForm = props => {
 }
 
 export default reduxForm({
-    form: 'ResetPasswordForm',  // a unique identifier for this form
+    form: "ResetPasswordForm",  // a unique identifier for this form
     validate,
     resetPassword
 })(ResetPasswordForm)

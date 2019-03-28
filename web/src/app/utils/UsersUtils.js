@@ -26,7 +26,7 @@ export function renderUsersList(users, loadFunction = {}, dispatch,
                             transitionEnterTimeout={500}
                             transitionLeaveTimeout={300}>
                             {users.map((user) =>
-                                <li key={user.id.value} onClick={() => { dispatch({type: actionTypes.USER_DETAIL_MODAL, payload: {...user, display: true},  }) }}>
+                                <li key={user.id.value} onClick={() => { dispatch({type: actionTypes.USER_DETAIL_MODAL, payload: {...user, display: true} }) }}>
                                     <UserList user={user} showMenu={showMenu}/>
                                 </li>
                             )}
@@ -46,4 +46,3 @@ export function renderUsersList(users, loadFunction = {}, dispatch,
     )
 
 }
-

@@ -1,6 +1,6 @@
-import React from 'react'
-import {connect } from 'react-redux'
-import PropTypes from 'prop-types'
+import React from "react"
+import {connect } from "react-redux"
+import PropTypes from "prop-types"
 import { Modal } from "react-bootstrap"
 import * as actionTypes from  "../../actions/actionTypes"
 import {UsersText} from "../../constants/text/text"
@@ -36,7 +36,7 @@ class ModalBox extends React.Component {
                 </Modal.Header>
                 <Modal.Body>
                     <div>
-                        {details.gender == 'male' ? <i className="fa fa-male" aria-hidden="true"></i> :
+                        {details.gender == "male" ? <i className="fa fa-male" aria-hidden="true"></i> :
                             <i className="fa fa-female" aria-hidden="true"></i>}
                         <span> {UsersText.gender}: {details.gender} </span>
                     </div>

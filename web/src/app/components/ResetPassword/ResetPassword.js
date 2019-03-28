@@ -4,7 +4,7 @@ import { browserHistory } from "react-router"
 import { Row} from "react-bootstrap"
 import { LoadingButton } from "../Common/Common"
 import * as actionTypes from "../../actions/actionTypes"
-import { ResetPasswordText, ResetPasswordCheckEmailText } from '../../constants/text/text'
+import { ResetPasswordText, ResetPasswordCheckEmailText } from "../../constants/text/text"
 import ResetPasswordForm from "../Forms/ResetPassword/ResetPassword"
 import Footer from "../Layout/Footer/Footer"
 import PropTypes from "prop-types"
@@ -52,7 +52,7 @@ class ResetPassword extends Component {
                         </Row>
                         :
                         <Row className="reset-password-check-mail">
-                            <Row style={ { textAlign : 'center'} }>
+                            <Row style={ { textAlign : "center"} }>
                                 <h1>{ResetPasswordCheckEmailText.title}</h1>
 
                                 <Row className="firstMessage">

@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
-import { Field, reduxForm } from 'redux-form'
+import React, { Component } from "react"
+import { Field, reduxForm } from "redux-form"
 import { Link } from "react-router"
-import { Button, FormGroup, FormControl, HelpBlock, Row, Col } from 'react-bootstrap'
+import { Button, FormGroup, FormControl, HelpBlock, Row, Col } from "react-bootstrap"
 
-import { LoginText } from '../../../constants/text/text'
-import { renderFieldText } from '../../Common/Common'
-import { maxLength, required } from '../../../utils/HelperUtils'
-import { submitLoginUser } from '../../../actions/auth'
-import Config from 'Config'
+import { LoginText } from "../../../constants/text/text"
+import { renderFieldText } from "../../Common/Common"
+import { maxLength, required } from "../../../utils/HelperUtils"
+import { submitLoginUser } from "../../../actions/auth"
+import Config from "Config"
 
 const validate = values => {
     const errors = {}
-    const requiredFields = ['email', 'password']
+    const requiredFields = ["email", "password"]
 
     requiredFields.map((field) => {
-        if(!values[field] && field === 'password') {
+        if(!values[field] && field === "password") {
             errors.password = LoginText.passwordValidation
         }
     })
@@ -32,8 +32,8 @@ const getStyles = () => {
         form: {
             marginTop: 10,
             marginBottom: 20,
-            textAlign:'center',
-            width: '100%'
+            textAlign:"center",
+            width: "100%"
         }
     }
 }
@@ -50,13 +50,13 @@ const LoginForm = props => {
                     <Col>
                         <div>{LoginText.title}</div>
                         <FormGroup bsSize="large">
-                            <Field 
-                            id="email" 
-                            type="email" 
+                            <Field
+                            id="email"
+                            type="email"
                             name="email"
                             validate={maxLength254}
                             placeholder={LoginText.emailAddress}
-                            component={renderFieldText} 
+                            component={renderFieldText}
                         />
                         </FormGroup>
                         <FormGroup bsSize="large">
@@ -71,13 +71,13 @@ const LoginForm = props => {
                         </FormGroup>
                         <div style={styles.form} className="error-block">
                             {
-                                (error && error) 
+                                (error && error)
                             }
                         </div>
                         <Row className="join-container">
-                            <Button 
-                                id="submit_btn" 
-                                type="submit" 
+                            <Button
+                                id="submit_btn"
+                                type="submit"
                                 className="blue-btn"
                                 onClick={() => handleSubmit(submitLoginUser)}>
                                 {LoginText.login}
@@ -107,7 +107,7 @@ const LoginForm = props => {
 }
 
 export default reduxForm({
-    form: 'LoginForm',
+    form: "LoginForm",
     validate,
     submitLoginUser
 })(LoginForm)

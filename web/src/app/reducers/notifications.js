@@ -1,10 +1,10 @@
-import * as actionTypes from '../actions/actionTypes'
+import * as actionTypes from "../actions/actionTypes"
 
 const initialState = {
     banner: {
         fail: false,
         success: false,
-        message: ''
+        message: ""
     }
 }
 

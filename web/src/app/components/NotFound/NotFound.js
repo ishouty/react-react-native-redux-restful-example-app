@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { PageNotFoundText } from '../../constants/text/text'
-import { Row } from 'react-bootstrap'
+import React, { Component } from "react"
+import { PageNotFoundText } from "../../constants/text/text"
+import { Row } from "react-bootstrap"
 
 
 export default class NotFound extends Component {

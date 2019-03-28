@@ -3,7 +3,7 @@ import {getinstanceAxios} from "../actions/auth"
 
 export const DEFAULT_START_PAGE = 1
 export const DEFAULT_PAGE_SIZE = 10
-const DEFAULT_FILTER = 'all'
+const DEFAULT_FILTER = "all"
 
 export function getUsersList(page = DEFAULT_START_PAGE, size = DEFAULT_PAGE_SIZE, filter=DEFAULT_FILTER) {
 
@@ -13,13 +13,13 @@ export function getUsersList(page = DEFAULT_START_PAGE, size = DEFAULT_PAGE_SIZE
 
         switch(filter) {
             case "male":
-                filter = '&gender=male'
+                filter = "&gender=male"
                 break
             case "female":
-                filter = '&gender=female'
+                filter = "&gender=female"
                 break
             default:
-                filter = ''
+                filter = ""
                 break
         }
 

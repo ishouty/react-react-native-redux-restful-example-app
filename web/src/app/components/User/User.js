@@ -1,8 +1,8 @@
 import React, {Component} from "react"
 import {UsersText} from "../../constants/text/text"
 import ProfileAvatarName from "../ProfileAvatarName/ProfileAvatarName"
-import PropTypes from 'prop-types'
-import {Row, Col} from 'react-bootstrap'
+import PropTypes from "prop-types"
+import {Row, Col} from "react-bootstrap"
 
 class UsersList extends Component {
 
@@ -17,7 +17,7 @@ class UsersList extends Component {
                     <h5>{UsersText.personalDetailsTitle}</h5>
 
                     <div>
-                        {user.gender == 'male' ? <i className="fa fa-male" aria-hidden="true"></i> :
+                        {user.gender == "male" ? <i className="fa fa-male" aria-hidden="true"></i> :
                             <i className="fa fa-female" aria-hidden="true"></i>}
                         <span> {UsersText.gender}: {user.gender} </span>
                     </div>

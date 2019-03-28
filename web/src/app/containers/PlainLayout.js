@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 import {Banner} from "../components/Common/Common"
 
 export default class PlainLayout extends Component {
@@ -26,4 +26,3 @@ export default class PlainLayout extends Component {
         )
     }
 }
-

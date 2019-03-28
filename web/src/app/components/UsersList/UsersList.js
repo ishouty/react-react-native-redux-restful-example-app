@@ -2,8 +2,8 @@ import React, {Component} from "react"
 import {connect} from "react-redux"
 import {getUsersList, DEFAULT_PAGE_SIZE, DEFAULT_START_PAGE} from "../../actions/users"
 import {renderUsersList} from "../../utils/UsersUtils"
-import PropTypes from 'prop-types'
-import emptyUserListImage from '../../assets/images/layout/welcome.jpg'
+import PropTypes from "prop-types"
+import emptyUserListImage from "../../assets/images/layout/welcome.jpg"
 import {MatchedQuestionsText} from "../../constants/text/text"
 
 @connect((store) => {

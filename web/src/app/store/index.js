@@ -1,9 +1,9 @@
-import { createStore, applyMiddleware, compose } from 'redux'
-import { devTools, persistState } from 'redux-devtools'
-import axios from 'axios'
-import Middleware from '../middleware'
-import Reducer from '../reducers/reducer'
-import DevTools from '../containers/DevTools'
+import { createStore, applyMiddleware, compose } from "redux"
+import { devTools, persistState } from "redux-devtools"
+import axios from "axios"
+import Middleware from "../middleware"
+import Reducer from "../reducers/reducer"
+import DevTools from "../containers/DevTools"
 
 let finalCreateStore
 

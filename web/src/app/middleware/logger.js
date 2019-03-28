@@ -5,10 +5,10 @@
  */
 export default function logger({ getState }) {
   return (next) => (action) => {
-    console.log('dispatching', action)// eslint-disable-line
+    console.log("dispatching", action)// eslint-disable-line
     const result = next(action)
 
-    console.log('next state', getState())// eslint-disable-line
+    console.log("next state", getState())// eslint-disable-line
     return result
   }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import {Col} from "react-bootstrap"
 import {Link} from "react-router"
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
 class Navigation extends Component {
 
@@ -11,7 +11,7 @@ class Navigation extends Component {
         let navigationItems = navigationLinks.map((link, index) => {
             return (
                 <li key={index}>
-                    <Link to={link.href} activeClassName='active' className={link.className}>
+                    <Link to={link.href} activeClassName="active" className={link.className}>
                         { link.icon && <i className={`fa ${link.icon}` }  aria-hidden="true"></i> }
                         <span>{link.title}</span>
                     </Link>

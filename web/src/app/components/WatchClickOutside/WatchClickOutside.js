@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from "react"
 
 export class WatchClickOutside extends Component {
     constructor(props) {
@@ -7,12 +7,12 @@ export class WatchClickOutside extends Component {
     }
 
     componentWillMount() {
-        document.body.addEventListener('click', this.handleClick);
+        document.body.addEventListener("click", this.handleClick);
     }
 
     componentWillUnmount() {
         // remember to remove all events to avoid memory leaks
-        document.body.removeEventListener('click', this.handleClick);
+        document.body.removeEventListener("click", this.handleClick);
     }
 
     handleClick(event) {
@@ -21,7 +21,7 @@ export class WatchClickOutside extends Component {
 
         const {target} = event;
         // if there is no proper callback - no point of checking
-        if (typeof onClickOutside !== 'function') {
+        if (typeof onClickOutside !== "function") {
             return;
         }
 

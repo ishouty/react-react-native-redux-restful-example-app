@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Row, Col } from 'react-bootstrap'
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { Row, Col } from "react-bootstrap"
 
-import { BannerRightSection, LoadingButton } from '../Common/Common'
-import Footer from '../Layout/Footer/Footer'
-import LoginForm from '../Forms/Login/Login'
+import { BannerRightSection, LoadingButton } from "../Common/Common"
+import Footer from "../Layout/Footer/Footer"
+import LoginForm from "../Forms/Login/Login"
 
-import { LoginText } from '../../constants/text/text'
-import rightSideImage from '../../../app/assets/images/layout/new-york-690868_1920.jpg'
+import { LoginText } from "../../constants/text/text"
+import rightSideImage from "../../../app/assets/images/layout/new-york-690868_1920.jpg"
 
 @connect((store) => {
     return {
@@ -43,7 +43,7 @@ class Login extends Component {
             </div>
         )
     }
-    
+
 }
 
 export default Login
