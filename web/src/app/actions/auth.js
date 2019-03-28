@@ -1,10 +1,10 @@
-import Config from 'Config'
-import {store} from '../store'
-import axios from 'axios'
+import Config from "Config"
+import {store} from "../store"
+import axios from "axios"
 
-import * as actionTypes from '../actions/actionTypes'
-import * as message from '../constants/text/text'
-import { browserHistory } from 'react-router'
+import * as actionTypes from "../actions/actionTypes"
+import * as message from "../constants/text/text"
+import { browserHistory } from "react-router"
 
 /**
  * Dispatch action to fetch and authenticate user
@@ -15,7 +15,7 @@ import { browserHistory } from 'react-router'
 export function submitLoginUser(values, dispatch) {
     dispatch({type: actionTypes.LOADING_PAGE, payload: {common: true}})
 
-    browserHistory.push('/app/users')
+    browserHistory.push("/app/users")
 
     //validate the user is valid with a dispatch
     //store various local storage and session
@@ -29,7 +29,7 @@ export function resetPassword (values, dispatch)  {
 }
 
 export function logout() {
-    browserHistory.push('/')
+    browserHistory.push("/")
     localStorage.clear()
     store.dispatch({type: actionTypes.CLEAR_STATE})
 }
@@ -69,11 +69,7 @@ export function getinstanceAxios() {
     })
 
     //set default headers
-    instanceAxios.defaults.headers.post['Content-Type'] = 'application/json'
+    instanceAxios.defaults.headers.post["Content-Type"] = "application/json"
 
     return instanceAxios
 }
-
-
-
-

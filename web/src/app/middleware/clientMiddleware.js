@@ -4,7 +4,7 @@ export default function clientMiddleware(client) {
 
         return next => action => {
 
-            if (typeof action === 'function') {
+            if (typeof action === "function") {
                 return action(dispatch, getState)
             }
 
@@ -23,7 +23,7 @@ export default function clientMiddleware(client) {
                 (error) => next({...rest, error, type: FAILURE})
 
             ).catch((error)=> {
-                console.error('MIDDLEWARE ERROR:', error)
+                //console.error("MIDDLEWARE ERROR:", error)
                 next({...rest, error, type: FAILURE})
             })
 

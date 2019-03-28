@@ -9,7 +9,7 @@ import {store} from "./store"
 import Config from "Config"
 import Subscribers from "./subscribers"
 import {MIX_PANEL, FILTER_USERS} from "../../src/app/constants"
-import { RouteText } from  '../../src/app/constants/text/text'
+import { RouteText } from  "../../src/app/constants/text/text"
 
 //layout structure
 import { logout } from "./actions/auth"
@@ -21,7 +21,7 @@ import Login from "./components/Login/Login"
 import NotFound from "./components/NotFound/NotFound"
 
 //Debug development tool for redux and viewing store
-import DevTools from './containers/DevTools'
+import DevTools from "./containers/DevTools"
 //Main Application
 import Users, { OPEN_MALE_USERS,
                 OPEN_FEMALE_USERS,
