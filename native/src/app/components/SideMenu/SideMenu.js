@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 import {View, StyleSheet} from "react-native"
 import {MontSerratText} from "../Common/MontSerratText/MontSerratText"
-import {SafeAreaView} from 'react-navigation'
+import {SafeAreaView} from "react-navigation"
 import CustomDrawerNavigatorItems from "./CustomDrawerNavigatorItems"
 import Colors from "../../constants/Colors"
 import {CommonText} from "../../constants/Text"
@@ -12,7 +12,7 @@ class SideMenu extends React.Component {
 
         return (
             <View style={styles.container}>
-                <SafeAreaView style={styles.content} forceInset={{top: 'always', horizontal: 'never'}}>
+                <SafeAreaView style={styles.content} forceInset={{top: "always", horizontal: "never"}}>
                     <CustomDrawerNavigatorItems {...this.props} />
                 </SafeAreaView>
 
@@ -28,8 +28,8 @@ class SideMenu extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'space-between',
+        flexDirection: "column",
+        justifyContent: "space-between",
     },
     content: {
         flex: 1,

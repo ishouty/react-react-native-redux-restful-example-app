@@ -1,11 +1,11 @@
-import React from 'react'
-import {View, Text, StyleSheet, RefreshControl, FlatList} from 'react-native'
+import React from "react"
+import {View, Text, StyleSheet, RefreshControl, FlatList} from "react-native"
 import Layout from "../../constants/Layout"
 import Colors from "../../constants/Colors"
 import Fonts from "../../constants/Fonts"
 import Button from "../Common/Button/Button"
 import {CommonText} from "../../constants/Text"
-import LoadingSpinner from 'react-native-loading-spinner-overlay'
+import LoadingSpinner from "react-native-loading-spinner-overlay"
 import {getUsersList} from "../../actions/appActions"
 import {capitalizedText, dropDownFailedAlert, isEven} from "../../utils/GeneralUtil"
 import DropdownAlert from "react-native-dropdownalert"
@@ -68,7 +68,7 @@ class UserList extends React.Component {
         return (
             <View style={newStyles}>
 
-                <View style={imageDisplay === 'small' ? {flexDirection: 'row'} : {}}>
+                <View style={imageDisplay === "small" ? {flexDirection: "row"} : {}}>
                     <ProfileAvatar sourceImage={{uri: item.picture.large}} size={this.props.imageDisplay} />
                     {item.name && <Text style={[{marginLeft: 5},styles.summaryItem]}>{capitalizedText(item.name.title)} {capitalizedText(item.name.first)} {capitalizedText(item.name.last)}</Text> }
                 </View>

@@ -1,5 +1,5 @@
-import { NavigationActions } from 'react-navigation'
-import RootStackNavigator from '../router/RootNavigation'
+import { NavigationActions } from "react-navigation"
+import RootStackNavigator from "../router/RootNavigation"
 
 const initialState = RootStackNavigator.router.getStateForAction(NavigationActions.init())
 

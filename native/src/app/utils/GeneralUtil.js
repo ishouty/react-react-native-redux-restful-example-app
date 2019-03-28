@@ -1,7 +1,7 @@
 import {WebBrowser}  from "expo"
 import {CommonText} from "../constants/Text"
 import {BANNER_TYPES} from "../constants/index"
-import Config from '../config/config.json'
+import Config from "../config/config.json"
 
 export const gotoContactUs = () => {
     WebBrowser.openBrowserAsync(Config.CONTACT_URL)
@@ -21,4 +21,3 @@ export const isEven = (value) => {
     else
         return false;
 }
-

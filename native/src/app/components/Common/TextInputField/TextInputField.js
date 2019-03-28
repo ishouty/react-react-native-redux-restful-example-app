@@ -1,5 +1,5 @@
-import React from 'react'
-import {Text, TextInput, View, StyleSheet} from 'react-native'
+import React from "react"
+import {Text, TextInput, View, StyleSheet} from "react-native"
 import Fonts from "../../../constants/Fonts";
 
 export default class TextInputField extends React.Component {
@@ -31,7 +31,7 @@ export default class TextInputField extends React.Component {
 
 const styles = StyleSheet.create({
     error: {
-        color: 'red',
+        color: "red",
         fontFamily: Fonts.montserratRegular,
         paddingBottom: 10
     }

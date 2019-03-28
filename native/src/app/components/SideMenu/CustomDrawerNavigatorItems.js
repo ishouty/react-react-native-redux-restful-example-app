@@ -1,8 +1,8 @@
 
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native'
-import {SafeAreaView} from 'react-navigation'
-import TouchableItem from './TouchableItem';
+import React from "react";
+import { View, Text, StyleSheet } from "react-native"
+import {SafeAreaView} from "react-navigation"
+import TouchableItem from "./TouchableItem";
 import {MontSerratText} from "../Common/MontSerratText/MontSerratText"
 
 /**
@@ -51,9 +51,9 @@ const CustomDrawerNavigatorItems = ({
                         <SafeAreaView
                             style={{ backgroundColor }}
                             forceInset={{
-                                [drawerPosition]: 'always',
-                                [drawerPosition === 'left' ? 'right' : 'left']: 'never',
-                                vertical: 'never',
+                                [drawerPosition]: "always",
+                                [drawerPosition === "left" ? "right" : "left"]: "never",
+                                vertical: "never",
                             }}
                         >
                             <View style={[styles.item, itemStyle]}>
@@ -68,7 +68,7 @@ const CustomDrawerNavigatorItems = ({
                                         {icon}
                                     </View>
                                 ) : null}
-                                {typeof label === 'string' ? (
+                                {typeof label === "string" ? (
                                     <MontSerratText style={[styles.label, { color }, labelStyle]}>
                                         {label}
                                     </MontSerratText>
@@ -87,10 +87,10 @@ const CustomDrawerNavigatorItems = ({
 
 /* Material design specs - https://material.io/guidelines/patterns/navigation-drawer.html#navigation-drawer-specs */
 CustomDrawerNavigatorItems.defaultProps = {
-    activeTintColor: '#2196f3',
-    activeBackgroundColor: 'rgba(0, 0, 0, .04)',
-    inactiveTintColor: 'rgba(0, 0, 0, .87)',
-    inactiveBackgroundColor: 'transparent',
+    activeTintColor: "#2196f3",
+    activeBackgroundColor: "rgba(0, 0, 0, .04)",
+    inactiveTintColor: "rgba(0, 0, 0, .87)",
+    inactiveBackgroundColor: "transparent",
 };
 
 const styles = StyleSheet.create({
@@ -98,20 +98,20 @@ const styles = StyleSheet.create({
         paddingVertical: 4,
     },
     item: {
-        flexDirection: 'row',
-        alignItems: 'center',
+        flexDirection: "row",
+        alignItems: "center",
     },
     icon: {
         marginHorizontal: 16,
         width: 24,
-        alignItems: 'center',
+        alignItems: "center",
     },
     inactiveIcon: {
         opacity: 0.62,
     },
     label: {
         margin: 16,
-        fontWeight: 'bold',
+        fontWeight: "bold",
     },
 });
 

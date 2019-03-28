@@ -1,14 +1,14 @@
-import React from 'react'
-import { StyleSheet, Text} from 'react-native'
+import React from "react"
+import { StyleSheet, Text} from "react-native"
 import {MontSerratText} from "../Common/MontSerratText/MontSerratText"
 
-import {View} from 'react-native'
+import {View} from "react-native"
 import {LoginScreenText} from "../../constants/Text"
 import Colors from "../../constants/Colors"
-import TextInputField from '../Common/TextInputField/TextInputField'
-import {Field, reduxForm} from 'redux-form'
+import TextInputField from "../Common/TextInputField/TextInputField"
+import {Field, reduxForm} from "redux-form"
 import Fonts from "../../constants/Fonts";
-import Button from '../Common/Button/Button'
+import Button from "../Common/Button/Button"
 import {submitLoginUser} from "../../actions/authActions"
 import {gotoContactUs} from "../../utils/GeneralUtil"
 
@@ -38,13 +38,13 @@ const LoginForm = (props) => {
 
             <MontSerratText style={styles.noteLogin}>{LoginScreenText.credentialsNote}</MontSerratText>
 
-            <Field style={styles.input} name={'email'}
+            <Field style={styles.input} name={"email"}
                    placeholder={LoginScreenText.emailPlaceHolder}
                    component={TextInputField}
                    validate={_validateEmail}
             />
 
-            <Field style={styles.input} name={'password'}
+            <Field style={styles.input} name={"password"}
                    placeholder={LoginScreenText.passwordPlaceHolder}
                    component={TextInputField}
                    secureTextEntry={true}
@@ -60,7 +60,7 @@ const LoginForm = (props) => {
                     bsClass={buttonStyles}
             />
 
-            <MontSerratText fontWeight={'bold'}
+            <MontSerratText fontWeight={"bold"}
                             style={styles.contact}
                             onPress={gotoContactUs}>{LoginScreenText.contactButton}
             </MontSerratText>
@@ -69,7 +69,7 @@ const LoginForm = (props) => {
 
 }
 
-export default reduxForm({form: 'LoginForm'})(LoginForm);
+export default reduxForm({form: "LoginForm"})(LoginForm);
 
 const buttonStyles = new StyleSheet.create({
     button: {
@@ -95,15 +95,15 @@ const styles = StyleSheet.create({
     contact: {
         fontSize: 16,
         color: Colors.black,
-        textAlign: 'center',
+        textAlign: "center",
         paddingTop: 10
     },
     error: {
-        color: 'red'
+        color: "red"
     },
     noteLogin: {
         marginBottom: 5,
-        textAlign: 'center'
+        textAlign: "center"
     }
 
 })

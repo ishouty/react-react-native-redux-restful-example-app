@@ -1,18 +1,18 @@
-import React, {Component} from 'react'
+import React, {Component} from "react"
 import {
     Dimensions,
     StyleSheet,
     Text,
     View
-} from 'react-native'
+} from "react-native"
 import Colors from "../../constants/Colors"
 import LoginForm from "../Forms/LoginForm"
-import LoadingSpinner from 'react-native-loading-spinner-overlay'
-import {connect} from 'react-redux'
+import LoadingSpinner from "react-native-loading-spinner-overlay"
+import {connect} from "react-redux"
 import DropdownAlert from "react-native-dropdownalert"
 
 import Fonts from "../../constants/Fonts";
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view"
 
 const mapStateToProps = (state) => {
     return ({
@@ -28,7 +28,7 @@ class LoginScreen extends Component {
     }
 
     _onLayout = (d) => {
-        this.setState({dimensions: Dimensions.get('window')})
+        this.setState({dimensions: Dimensions.get("window")})
     }
 
     render() {
@@ -42,7 +42,7 @@ class LoginScreen extends Component {
                 <LoadingSpinner visible={loading.common}/>
                 <KeyboardAwareScrollView contentContainerStyle={styles.scrollViewContainer} onLayout={this._onLayout}>
 
-                    <View style={{flex:1 , width: '100%'}}>
+                    <View style={{flex:1 , width: "100%"}}>
 
                         <View style={styles.titleContainer}>
                             <Text style={styles.title}>Login</Text>
@@ -71,8 +71,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: Colors.white,
-        alignContent: 'center',
-        justifyContent: 'flex-start'
+        alignContent: "center",
+        justifyContent: "flex-start"
     },
     title: {
         fontFamily: Fonts.montserratBold,
@@ -81,18 +81,18 @@ const styles = StyleSheet.create({
     },
     scrollViewContainer: {
         flexGrow: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        width:'100%'
+        flexDirection: "column",
+        alignItems: "center",
+        width:"100%"
     },
     titleContainer: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        width: '100%'
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%"
     },
     loginForm: {
         flex: 1,
-        width: '100%'
+        width: "100%"
     }
 })

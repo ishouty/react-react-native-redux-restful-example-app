@@ -23,7 +23,7 @@ export class MontSerratText extends React.Component {
 
             default:
                 return "montserrat-regular"
-            break;
+
 
         }
 

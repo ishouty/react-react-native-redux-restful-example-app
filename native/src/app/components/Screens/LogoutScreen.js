@@ -1,4 +1,4 @@
-import {Component} from 'react'
+import {Component} from "react"
 import { LoginActionType } from "../../actions/navigationActionTypes"
 
 export default class LogoutScreen extends Component {
@@ -18,4 +18,3 @@ export default class LogoutScreen extends Component {
     }
 
 }
-

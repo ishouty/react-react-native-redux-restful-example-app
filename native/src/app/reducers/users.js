@@ -13,11 +13,14 @@ const initialState = {
 export default function reducer(state = initialState, action = {}) {
     const {type, payload, page} = action
 
+    let newUsersList
+    let newPage
+    
     switch (type) {
 
         case actionTypes.LOADED_USERS:
 
-            let newUsersList, newPage
+
 
             if (page === 1 ) {
 
@@ -52,4 +55,3 @@ export default function reducer(state = initialState, action = {}) {
 
     }
 }
-

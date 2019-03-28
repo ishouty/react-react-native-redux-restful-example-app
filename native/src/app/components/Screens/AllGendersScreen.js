@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import {getUsersList} from '../../actions/appActions'
-import { navigationText } from '../../constants/Text'
-import { connect } from 'react-redux'
+import React from "react"
+import { View, StyleSheet } from "react-native"
+import {getUsersList} from "../../actions/appActions"
+import { navigationText } from "../../constants/Text"
+import { connect } from "react-redux"
 import UserList from "../UserList/UserList"
 import {dropDownFailedAlert} from "../../utils/GeneralUtil"
 import PropTypes from "prop-types"
@@ -21,7 +21,7 @@ class AllGendersScreen extends React.Component {
 
     componentDidMount() {
         const { dispatch } = this.props
-        dispatch(getUsersList((msg)=> { dropDownFailedAlert(this.dropdown, msg)},null, null, 'all'))
+        dispatch(getUsersList((msg)=> { dropDownFailedAlert(this.dropdown, msg)},null, null, "all"))
     }
 
     render() {
@@ -29,7 +29,7 @@ class AllGendersScreen extends React.Component {
 
         return (
             <View style={styles.container}>
-                <UserList dispatch={dispatch} data={users} condition={'all'} imageDisplay={'small'}/>
+                <UserList dispatch={dispatch} data={users} condition={"all"} imageDisplay={"small"}/>
             </View>
         )
     }

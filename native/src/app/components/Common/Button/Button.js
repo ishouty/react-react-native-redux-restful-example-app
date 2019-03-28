@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontFamily: Fonts.montserratBold,
     fontSize: 16,
-    textAlign: 'center'
+    textAlign: "center"
 },
 buttonTextLeft: {
     color: Colors.black,

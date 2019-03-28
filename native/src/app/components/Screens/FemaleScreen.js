@@ -1,8 +1,8 @@
-import React from 'react'
-import { View, StyleSheet } from 'react-native'
-import {getUsersList} from '../../actions/appActions'
-import { navigationText } from '../../constants/Text'
-import { connect } from 'react-redux'
+import React from "react"
+import { View, StyleSheet } from "react-native"
+import {getUsersList} from "../../actions/appActions"
+import { navigationText } from "../../constants/Text"
+import { connect } from "react-redux"
 import UserList from "../UserList/UserList"
 import {dropDownFailedAlert} from "../../utils/GeneralUtil"
 import PropTypes from "prop-types"
@@ -23,7 +23,7 @@ class FemaleScreen extends React.Component {
 
         const { dispatch } = this.props
 
-        dispatch(getUsersList((msg)=> { dropDownFailedAlert(this.dropdown, msg)},null, null, 'female'))
+        dispatch(getUsersList((msg)=> { dropDownFailedAlert(this.dropdown, msg)},null, null, "female"))
 
     }
 
@@ -32,7 +32,7 @@ class FemaleScreen extends React.Component {
 
         return (
             <View style={styles.container}>
-                <UserList dispatch={dispatch} data={users} condition={'female'} imageDisplay={'medium'}/>
+                <UserList dispatch={dispatch} data={users} condition={"female"} imageDisplay={"medium"}/>
             </View>
         )
     }

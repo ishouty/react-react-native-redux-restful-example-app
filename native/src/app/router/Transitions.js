@@ -80,7 +80,7 @@ export const transitionConfig = () => {
 
             const {route} = scene
             const params = route.params || {};
-            const transition = params.transition || 'default'
+            const transition = params.transition || "default"
 
             return {
                 slideFromBottomTransition: slideFromBottomTransitionInterpolator(index, position),

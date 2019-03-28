@@ -1,12 +1,12 @@
-import React from 'react'
-import {Platform, StatusBar, StyleSheet, View, AppState} from 'react-native'
-import {AppLoading, Asset, Font} from 'expo'
-import {Ionicons} from '@expo/vector-icons'
-import {addNavigationHelpers} from 'react-navigation'
-import RootStackNavigator from './router/RootNavigation'
+import React from "react"
+import {Platform, StatusBar, StyleSheet, View, AppState} from "react-native"
+import {AppLoading, Asset, Font} from "expo"
+import {Ionicons} from "@expo/vector-icons"
+import {addNavigationHelpers} from "react-navigation"
+import RootStackNavigator from "./router/RootNavigation"
 
-import store from './store'
-import {connect, Provider} from 'react-redux'
+import store from "./store"
+import {connect, Provider} from "react-redux"
 import {createReduxBoundAddListener} from "react-navigation-redux-helpers"
 
 const addListener = createReduxBoundAddListener("root")
@@ -30,19 +30,19 @@ const mapStateToProps = (state) => {
 const AppStateWithNavigation = connect(mapStateToProps)(App)
 
 export default class Root extends React.Component {
-    state = {
+    const state = {
         isLoadingComplete: false,
         appState: AppState.currentState
     };
 
     componentWillUnmount() {
-        AppState.removeEventListener('change', this._handleAppStateChange);
+        AppState.removeEventListener("change", this._handleAppStateChange);
     }
 
     _handleAppStateChange = (nextAppState) => {
 
-        if (this.state.appState.match(/inactive|background/) && nextAppState === 'active') {
-            console.log('App has come to the foreground!')
+        if (this.state.appState.match(/inactive|background/) && nextAppState === "active") {
+            console.log("App has come to the foreground!")
         }
 
         this.setState({appState: nextAppState});
@@ -69,8 +69,8 @@ export default class Root extends React.Component {
             return (
                 <Provider store={store}>
                     <View style={styles.container}>
-                        {Platform.OS === 'ios' && <StatusBar barStyle="default"/>}
-                        {Platform.OS === 'android' && <View style={styles.statusBarUnderlay}/>}
+                        {Platform.OS === "ios" && <StatusBar barStyle="default"/>}
+                        {Platform.OS === "android" && <View style={styles.statusBarUnderlay}/>}
                         <AppStateWithNavigation/>
                     </View>
                 </Provider>
@@ -82,14 +82,14 @@ export default class Root extends React.Component {
     _loadResourcesAsync = async () => {
         return Promise.all([
             Asset.loadAsync([
-                require('./assets/images/icon.png')
+                require("./assets/images/icon.png")
             ]),
             Font.loadAsync({
                 // This is the font that we are using for our tab bar
                 ...Ionicons.font,
-                'montserrat-regular': require('./assets/fonts/Montserrat-Regular.ttf'),
-                'montserrat-thin': require('./assets/fonts/Montserrat-Thin.ttf'),
-                'montserrat-bold': require('./assets/fonts/Montserrat-Bold.ttf')
+                "montserrat-regular": require("./assets/fonts/Montserrat-Regular.ttf"),
+                "montserrat-thin": require("./assets/fonts/Montserrat-Thin.ttf"),
+                "montserrat-bold": require("./assets/fonts/Montserrat-Bold.ttf")
             }),
         ]);
     };
@@ -108,10 +108,10 @@ export default class Root extends React.Component {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#fff',
+        backgroundColor: "#fff",
     },
     statusBarUnderlay: {
         height: 24,
-        backgroundColor: 'rgba(0,0,0,0.2)',
+        backgroundColor: "rgba(0,0,0,0.2)",
     },
 });

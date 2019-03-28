@@ -7,20 +7,20 @@
  * On iOS you can pass the props of TouchableOpacity, on Android pass the props
  * of TouchableNativeFeedback.
  */
-import React from 'react'
+import React from "react"
 import {
     Platform,
     TouchableNativeFeedback,
     TouchableOpacity,
     View,
-} from 'react-native'
+} from "react-native"
 
 const ANDROID_VERSION_LOLLIPOP = 21
 
 export default class TouchableItem extends React.Component {
     static defaultProps = {
         borderless: false,
-        pressColor: 'rgba(0, 0, 0, .32)',
+        pressColor: "rgba(0, 0, 0, .32)",
     };
 
     render() {
@@ -33,7 +33,7 @@ export default class TouchableItem extends React.Component {
          * We need to pass the background prop to specify a borderless ripple effect.
          */
         if (
-            Platform.OS === 'android' &&
+            Platform.OS === "android" &&
             Platform.Version >= ANDROID_VERSION_LOLLIPOP
         ) {
             const { style, ...rest } = this.props;

@@ -1,13 +1,13 @@
-import React from 'react'
-import { TabNavigator, TabBarBottom, DrawerNavigator } from 'react-navigation'
-import Colors from '../constants/Colors'
-import SideMenu from '../components/SideMenu/SideMenu'
+import React from "react"
+import { TabNavigator, TabBarBottom, DrawerNavigator } from "react-navigation"
+import Colors from "../constants/Colors"
+import SideMenu from "../components/SideMenu/SideMenu"
 
 //screens
-import LogoutScreen from '../components/Screens/LogoutScreen'
-import AllGendersScreen from '../components/Screens/AllGendersScreen'
-import FemaleScreen from '../components/Screens/FemaleScreen'
-import MaleScreen from '../components/Screens/MaleScreen'
+import LogoutScreen from "../components/Screens/LogoutScreen"
+import AllGendersScreen from "../components/Screens/AllGendersScreen"
+import FemaleScreen from "../components/Screens/FemaleScreen"
+import MaleScreen from "../components/Screens/MaleScreen"
 
 //display the main footer navigation on the main screen
 
@@ -33,23 +33,23 @@ const MainFooterNavigation = TabNavigator(
             // showIcon: false, // Comment this out and re-enable the marginTop, marginBottom for the notifications bubble to appear
             labelStyle: {
                 fontSize: 13,
-                fontFamily: 'montserrat-regular',
+                fontFamily: "montserrat-regular",
                 marginTop: 10,
                 marginBottom: 16
             },
             tabStyle: {
                 height: 200,
-                width: 'auto',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative'
+                width: "auto",
+                justifyContent: "center",
+                alignItems: "center",
+                position: "relative"
             },
             style: {
                 backgroundColor: Colors.black
             }
         },
         tabBarComponent: TabBarBottom,
-        tabBarPosition: 'bottom',
+        tabBarPosition: "bottom",
         animationEnabled: false,
         swipeEnabled: false,
         navigationOptions: ({ navigation }) => {
@@ -69,20 +69,20 @@ const TabsInDrawer = DrawerNavigator(
         Home: {
             screen: MainFooterNavigation,
             navigationOptions: {
-                drawerLabel: 'Home'
+                drawerLabel: "Home"
             }
         },
         Logout: {
             screen: LogoutScreen,
             navigationOptions: ({ navigation }) => ({
-                drawerLabel: 'Log out',
+                drawerLabel: "Log out",
                 header: null,
-                drawerLockMode: 'locked-closed'})
+                drawerLockMode: "locked-closed"})
         }
     },
     {
         contentComponent: SideMenu,
-        drawerPosition: 'left'
+        drawerPosition: "left"
     }
 )
 

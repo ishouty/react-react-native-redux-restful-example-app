@@ -1,4 +1,4 @@
-import thunkMiddleware from 'redux-thunk'
+import thunkMiddleware from "redux-thunk"
 import {createReactNavigationReduxMiddleware} from "react-navigation-redux-helpers"
 import logger from "./logger"
 

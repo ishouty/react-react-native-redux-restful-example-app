@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions/appActionTypes'
+import * as actionTypes from "../actions/appActionTypes"
 
 const initialState = {
     loading: {
@@ -31,4 +31,3 @@ export default function reducer(state = initialState, action = {}) {
             return state
     }
 }
-
