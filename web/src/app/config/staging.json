@@ -1,6 +1,7 @@
 {
   "URL": "http://www.linkedin.com/in/andy-nguyen84",
   "CONTACT": "http://www.linkedin.com/in/andy-nguyen84",
-  "API_URL":"https://randomuser.me",
+  "API_URL": "http://localhost:8080/api",
+  "APOLLO_URL": "http://localhost:8080/graphql",
   "MIXPANEL_TOKEN": "789732897298"
 }

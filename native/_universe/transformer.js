@@ -9,7 +9,7 @@
  * Note: This is a fork of the fb-specific transform.js
  *
  */
-'use strict';
+'use strict'
 
 /**
  * [Expo] This transformer was based on React Native's transformer with the
@@ -20,44 +20,49 @@
  *     if we hadn't forked the transformer at all
  */
 
-const babel = require('react-native/node_modules/babel-core');
-const crypto = require('crypto');
-const externalHelpersPlugin = require('react-native/node_modules/babel-plugin-external-helpers');
-const fs = require('fs');
-const generate = require('react-native/node_modules/babel-generator').default;
-const inlineRequiresPlugin = require('react-native/node_modules/babel-preset-fbjs/plugins/inline-requires');
-const makeHMRConfig = require('react-native/node_modules/babel-preset-react-native/configs/hmr');
-const path = require('path');
-const resolvePlugins = require('react-native/node_modules/babel-preset-react-native/lib/resolvePlugins');
+const babel = require('react-native/node_modules/babel-core')
+const crypto = require('crypto')
+const externalHelpersPlugin = require('react-native/node_modules/babel-plugin-external-helpers')
+const fs = require('fs')
+const generate = require('react-native/node_modules/babel-generator')
+  .default
+const inlineRequiresPlugin = require('react-native/node_modules/babel-preset-fbjs/plugins/inline-requires')
+const makeHMRConfig = require('react-native/node_modules/babel-preset-react-native/configs/hmr')
+const path = require('path')
+const resolvePlugins = require('react-native/node_modules/babel-preset-react-native/lib/resolvePlugins')
 
 const {
-  compactMapping,
-} = require('react-native/node_modules/metro-bundler/src/Bundler/source-map');
+  compactMapping
+} = require('react-native/node_modules/metro-bundler/src/Bundler/source-map')
 
 const cacheKeyParts = [
   fs.readFileSync(__filename),
   require('react-native/node_modules/babel-plugin-external-helpers/package.json')
     .version,
-  require('react-native/node_modules/babel-preset-fbjs/package.json').version,
-  require('react-native/node_modules/babel-preset-react-native/package.json')
+  require('react-native/node_modules/babel-preset-fbjs/package.json')
     .version,
-];
+  require('react-native/node_modules/babel-preset-react-native/package.json')
+    .version
+]
 
 const EXPO_REACT_NATIVE_PATH = path.join(
   process.env.EXPO_UNIVERSE_DIR,
   'react-native-lab',
   'react-native'
-);
+)
 if (!fs.existsSync(EXPO_REACT_NATIVE_PATH)) {
   throw new Error(
     `Expo copy of React Native could not be found. Are you sure it exists at: ${EXPO_REACT_NATIVE_PATH}?`
-  );
+  )
 }
-const EXPO_REACT_PATH = path.join(EXPO_REACT_NATIVE_PATH, 'node_modules/react');
+const EXPO_REACT_PATH = path.join(
+  EXPO_REACT_NATIVE_PATH,
+  'node_modules/react'
+)
 if (!fs.existsSync(EXPO_REACT_PATH)) {
   throw new Error(
     `React Native's "react" peer could not be found. Are you sure it exists at: ${EXPO_REACT_PATH}?`
-  );
+  )
 }
 
 /**
@@ -65,22 +70,22 @@ if (!fs.existsSync(EXPO_REACT_PATH)) {
  * project level .babelrc file, and if it doesn't exist, reads the
  * default RN babelrc file and uses that.
  */
-const getBabelRC = (function() {
-  let babelRC = null;
+const getBabelRC = (function () {
+  let babelRC = null
 
   return function _getBabelRC(projectRoot) {
     if (babelRC !== null) {
-      return babelRC;
+      return babelRC
     }
 
-    babelRC = { plugins: [] };
+    babelRC = { plugins: [] }
 
     // Let's look for the .babelrc in the project root.
     // In the future let's look into adding a command line option to specify
     // this location.
-    let projectBabelRCPath;
+    let projectBabelRCPath
     if (projectRoot) {
-      projectBabelRCPath = path.resolve(projectRoot, '.babelrc');
+      projectBabelRCPath = path.resolve(projectRoot, '.babelrc')
     }
 
     // If a .babelrc file doesn't exist in the project,
@@ -88,82 +93,91 @@ const getBabelRC = (function() {
     if (!projectBabelRCPath || !fs.existsSync(projectBabelRCPath)) {
       babelRC = {
         presets: [require('babel-preset-react-native')],
-        plugins: [],
-      };
+        plugins: []
+      }
 
       // Require the babel-preset's listed in the default babel config
       // $FlowFixMe: dynamic require can't be avoided
-      babelRC.presets = babelRC.presets.map(preset =>
+      babelRC.presets = babelRC.presets.map((preset) =>
         require('babel-preset-' + preset)
-      );
-      babelRC.plugins = resolvePlugins(babelRC.plugins);
+      )
+      babelRC.plugins = resolvePlugins(babelRC.plugins)
     } else {
       // if we find a .babelrc file we tell babel to use it
-      babelRC.extends = projectBabelRCPath;
+      babelRC.extends = projectBabelRCPath
     }
 
-    return babelRC;
-  };
-})();
+    return babelRC
+  }
+})()
 
 /**
  * Given a filename and options, build a Babel
  * config object with the appropriate plugins.
  */
 function buildBabelConfig(filename, options) {
-  const babelRC = getBabelRC(options.projectRoot);
+  const babelRC = getBabelRC(options.projectRoot)
 
   const extraConfig = {
     // [Expo] We add the module resolver plugin (as a preset) to make sure
     // we're looking up peer deps (like react-native and react) in the
     // right place
-    presets: [...(babelRC.presets || []), buildModuleResolverPreset()],
+    presets: [
+      ...(babelRC.presets || []),
+      buildModuleResolverPreset()
+    ],
     // [Expo] When running in universe, we don't want to disable
     // babelRC lookup for dependencies
     babelrc: false,
     code: false,
-    filename,
-  };
+    filename
+  }
 
-  let config = Object.assign({}, babelRC, extraConfig);
+  let config = Object.assign({}, babelRC, extraConfig)
 
   // Add extra plugins
-  const extraPlugins = [externalHelpersPlugin];
+  const extraPlugins = [externalHelpersPlugin]
 
-  var inlineRequires = options.inlineRequires;
+  var inlineRequires = options.inlineRequires
   var blacklist =
-    typeof inlineRequires === 'object' ? inlineRequires.blacklist : null;
+    typeof inlineRequires === 'object'
+      ? inlineRequires.blacklist
+      : null
   if (inlineRequires && !(blacklist && filename in blacklist)) {
-    extraPlugins.push(inlineRequiresPlugin);
+    extraPlugins.push(inlineRequiresPlugin)
   }
 
-  config.plugins = extraPlugins.concat(config.plugins);
+  config.plugins = extraPlugins.concat(config.plugins)
 
   if (options.dev && options.hot) {
-    const hmrConfig = makeHMRConfig(options, filename);
-    config = Object.assign({}, config, hmrConfig);
+    const hmrConfig = makeHMRConfig(options, filename)
+    config = Object.assign({}, config, hmrConfig)
   }
 
-  return Object.assign({}, babelRC, config);
+  return Object.assign({}, babelRC, config)
 }
 
 function transform({ filename, options, src }) {
-  options = options || { platform: '', projectRoot: '', inlineRequires: false };
+  options = options || {
+    platform: '',
+    projectRoot: '',
+    inlineRequires: false
+  }
 
-  const OLD_BABEL_ENV = process.env.BABEL_ENV;
-  process.env.BABEL_ENV = options.dev ? 'development' : 'production';
+  const OLD_BABEL_ENV = process.env.BABEL_ENV
+  process.env.BABEL_ENV = options.dev ? 'development' : 'production'
 
   try {
-    const babelConfig = buildBabelConfig(filename, options);
-    const { ast, ignored } = babel.transform(src, babelConfig);
+    const babelConfig = buildBabelConfig(filename, options)
+    const { ast, ignored } = babel.transform(src, babelConfig)
 
     if (ignored) {
       return {
         ast: null,
         code: src,
         filename,
-        map: null,
-      };
+        map: null
+      }
     } else {
       const result = generate(
         ast,
@@ -173,10 +187,10 @@ function transform({ filename, options, src }) {
           filename,
           retainLines: !!options.retainLines,
           sourceFileName: filename,
-          sourceMaps: true,
+          sourceMaps: true
         },
         src
-      );
+      )
 
       return {
         ast,
@@ -184,14 +198,14 @@ function transform({ filename, options, src }) {
         filename,
         map: options.generateSourceMaps
           ? result.map
-          : result.rawMappings.map(compactMapping),
-      };
+          : result.rawMappings.map(compactMapping)
+      }
     }
   } catch (e) {
-    console.error(e);
-    throw e;
+    console.error(e)
+    throw e
   } finally {
-    process.env.BABEL_ENV = OLD_BABEL_ENV;
+    process.env.BABEL_ENV = OLD_BABEL_ENV
   }
 }
 
@@ -207,21 +221,21 @@ function buildModuleResolverPreset() {
         {
           alias: {
             react: EXPO_REACT_PATH,
-            'react-native': EXPO_REACT_NATIVE_PATH,
-          },
-        },
-      ],
-    ],
-  };
+            'react-native': EXPO_REACT_NATIVE_PATH
+          }
+        }
+      ]
+    ]
+  }
 }
 
 function getCacheKey() {
-  var key = crypto.createHash('md5');
-  cacheKeyParts.forEach(part => key.update(part));
-  return key.digest('hex');
+  var key = crypto.createHash('md5')
+  cacheKeyParts.forEach((part) => key.update(part))
+  return key.digest('hex')
 }
 
 module.exports = {
   transform,
-  getCacheKey,
-};
+  getCacheKey
+}

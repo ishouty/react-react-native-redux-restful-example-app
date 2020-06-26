@@ -1,118 +1,117 @@
-
-import React from "react";
-import { View, Text, StyleSheet } from "react-native"
-import {SafeAreaView} from "react-navigation"
-import TouchableItem from "./TouchableItem";
-import {MontSerratText} from "../Common/MontSerratText/MontSerratText"
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import { SafeAreaView } from 'react-navigation'
+import TouchableItem from './TouchableItem'
+import { MontSerratText } from '../Common/MontSerratText/MontSerratText'
 
 /**
  * Component that renders the navigation list in the drawer.
  */
 const CustomDrawerNavigatorItems = ({
+  navigation: { state, navigate, dispatch },
+  items,
+  activeItemKey,
+  activeTintColor,
+  activeBackgroundColor,
+  inactiveTintColor,
+  inactiveBackgroundColor,
+  getLabel,
+  renderIcon,
+  onItemPress,
+  itemsContainerStyle,
+  itemStyle,
+  labelStyle,
+  iconContainerStyle,
+  drawerPosition
+}) => {
+  return (
+    <View style={[styles.container, itemsContainerStyle]}>
+      {items.map((route, index) => {
+        const focused = activeItemKey === route.key
+        const color = focused ? activeTintColor : inactiveTintColor
+        const backgroundColor = focused
+          ? activeBackgroundColor
+          : inactiveBackgroundColor
+        const scene = { route, index, focused, tintColor: color }
+        const icon = renderIcon(scene)
+        const label = getLabel(scene)
 
-                                  navigation: { state, navigate, dispatch },
-                                  items,
-                                  activeItemKey,
-                                  activeTintColor,
-                                  activeBackgroundColor,
-                                  inactiveTintColor,
-                                  inactiveBackgroundColor,
-                                  getLabel,
-                                  renderIcon,
-                                  onItemPress,
-                                  itemsContainerStyle,
-                                  itemStyle,
-                                  labelStyle,
-                                  iconContainerStyle,
-                                  drawerPosition,
-                              }) => {
-    return  (
-
-        <View style={[styles.container, itemsContainerStyle]}>
-
-            {items.map((route, index) => {
-                const focused = activeItemKey === route.key;
-                const color = focused ? activeTintColor : inactiveTintColor;
-                const backgroundColor = focused
-                    ? activeBackgroundColor
-                    : inactiveBackgroundColor;
-                const scene = { route, index, focused, tintColor: color };
-                const icon = renderIcon(scene);
-                const label = getLabel(scene);
-
-                return (
-                    <TouchableItem
-                        key={route.key}
-                        onPress={() => {
-                            onItemPress({ route, focused });
-                        }}
-                        delayPressIn={0}
-                    >
-                        <SafeAreaView
-                            style={{ backgroundColor }}
-                            forceInset={{
-                                [drawerPosition]: "always",
-                                [drawerPosition === "left" ? "right" : "left"]: "never",
-                                vertical: "never",
-                            }}
-                        >
-                            <View style={[styles.item, itemStyle]}>
-                                {icon ? (
-                                    <View
-                                        style={[
-                                            styles.icon,
-                                            focused ? null : styles.inactiveIcon,
-                                            iconContainerStyle,
-                                        ]}
-                                    >
-                                        {icon}
-                                    </View>
-                                ) : null}
-                                {typeof label === "string" ? (
-                                    <MontSerratText style={[styles.label, { color }, labelStyle]}>
-                                        {label}
-                                    </MontSerratText>
-                                ) : (
-                                    <Text>{label}</Text>
-                                )}
-                            </View>
-                        </SafeAreaView>
-                    </TouchableItem>
-                );
-            })}
-        </View>
-    )
+        return (
+          <TouchableItem
+            key={route.key}
+            onPress={() => {
+              onItemPress({ route, focused })
+            }}
+            delayPressIn={0}
+          >
+            <SafeAreaView
+              style={{ backgroundColor }}
+              forceInset={{
+                [drawerPosition]: 'always',
+                [drawerPosition === 'left'
+                  ? 'right'
+                  : 'left']: 'never',
+                vertical: 'never'
+              }}
+            >
+              <View style={[styles.item, itemStyle]}>
+                {icon ? (
+                  <View
+                    style={[
+                      styles.icon,
+                      focused ? null : styles.inactiveIcon,
+                      iconContainerStyle
+                    ]}
+                  >
+                    {icon}
+                  </View>
+                ) : null}
+                {typeof label === 'string' ? (
+                  <MontSerratText
+                    style={[styles.label, { color }, labelStyle]}
+                  >
+                    {label}
+                  </MontSerratText>
+                ) : (
+                  <Text>{label}</Text>
+                )}
+              </View>
+            </SafeAreaView>
+          </TouchableItem>
+        )
+      })}
+    </View>
+  )
 }
-
 
 /* Material design specs - https://material.io/guidelines/patterns/navigation-drawer.html#navigation-drawer-specs */
 CustomDrawerNavigatorItems.defaultProps = {
-    activeTintColor: "#2196f3",
-    activeBackgroundColor: "rgba(0, 0, 0, .04)",
-    inactiveTintColor: "rgba(0, 0, 0, .87)",
-    inactiveBackgroundColor: "transparent",
-};
+  activeTintColor: '#2196f3',
+  activeBackgroundColor: 'rgba(0, 0, 0, .04)',
+  inactiveTintColor: 'rgba(0, 0, 0, .87)',
+  inactiveBackgroundColor: 'transparent'
+}
 
 const styles = StyleSheet.create({
-    container: {
-        paddingVertical: 4,
-    },
-    item: {
-        flexDirection: "row",
-        alignItems: "center",
-    },
-    icon: {
-        marginHorizontal: 16,
-        width: 24,
-        alignItems: "center",
-    },
-    inactiveIcon: {
-        opacity: 0.62,
-    },
-    label: {
-        margin: 16,
-        fontWeight: "bold",
-    },
-});
+  container: {
+    paddingVertical: 4
+  },
+  item: {
+    flexDirection: 'row',
+    alignItems: 'center'
+  },
+  icon: {
+    marginHorizontal: 16,
+    width: 24,
+    alignItems: 'center'
+  },
+  inactiveIcon: {
+    opacity: 0.62
+  },
+  label: {
+    margin: 16,
+    fontWeight: 'bold'
+  }
+})
 
-export default CustomDrawerNavigatorItems;
+export default CustomDrawerNavigatorItems

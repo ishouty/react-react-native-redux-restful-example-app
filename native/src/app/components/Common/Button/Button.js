@@ -1,14 +1,26 @@
-import React, { Component } from "react"
-import { Ionicons } from "@expo/vector-icons"
-import { Text, View, StyleSheet, TouchableHighlight } from "react-native"
-import Colors from "../../../constants/Colors"
-import Fonts from "../../../constants/Fonts"
+import React, { Component } from 'react'
+import { Ionicons } from '@expo/vector-icons'
+import {
+  Text,
+  View,
+  StyleSheet,
+  TouchableHighlight
+} from 'react-native'
+import Colors from '../../../constants/Colors'
+import Fonts from '../../../constants/Fonts'
 
 export default class Button extends Component {
   render() {
-    const { title, callback, bsClass, shouldShowRightIcon } = this.props
+    const {
+      title,
+      callback,
+      bsClass,
+      shouldShowRightIcon
+    } = this.props
 
-    let buttonTitleStyle = shouldShowRightIcon ? styles.buttonTextLeft : styles.buttonTextCenter
+    let buttonTitleStyle = shouldShowRightIcon
+      ? styles.buttonTextLeft
+      : styles.buttonTextCenter
 
     return (
       <View>
@@ -18,19 +30,21 @@ export default class Button extends Component {
           }}
         >
           <View style={[styles.buttonContainer, bsClass.button]}>
-            <Text style={[buttonTitleStyle, bsClass.buttonText]}>{title}</Text>
+            <Text style={[buttonTitleStyle, bsClass.buttonText]}>
+              {title}
+            </Text>
           </View>
         </TouchableHighlight>
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
     padding: 5,
     borderRadius: 0,
     borderColor: Colors.black,
@@ -48,9 +62,9 @@ const styles = StyleSheet.create({
     color: Colors.black,
     fontFamily: Fonts.montserratBold,
     fontSize: 16,
-    textAlign: "center"
-},
-buttonTextLeft: {
+    textAlign: 'center'
+  },
+  buttonTextLeft: {
     color: Colors.black,
     fontFamily: Fonts.montserratBold,
     fontSize: 16,

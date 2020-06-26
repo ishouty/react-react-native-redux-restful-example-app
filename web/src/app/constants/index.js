@@ -7,23 +7,21 @@ export const CLEAR_STATE = '@@ishouty/CLEAR_STATE'
 export const RESET_PASSWORD = '@@ishouty/RESET_PASSWORD'
 
 export const FILTER_USERS = {
-    gender: {
-        male: 'male',
-        female: 'female'
-    },
-    default: 'all'
+  gender: {
+    male: 'male',
+    female: 'female'
+  },
+  default: 'all'
 }
-
 
 //mixpanel
 export const MIX_PANEL = {
-    pageEnter: 'Page Enter',
-    pageView: 'Page View',
-    events: {
-        continue : 'Continue',
-        back : 'Back',
-        skip: 'Skip',
-        library: 'library'
-    }
-
+  pageEnter: 'Page Enter',
+  pageView: 'Page View',
+  events: {
+    continue: 'Continue',
+    back: 'Back',
+    skip: 'Skip',
+    library: 'library'
+  }
 }

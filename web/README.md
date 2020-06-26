@@ -1,65 +1,96 @@
-React js Redux Restful Boostrap Example 
-=====================
+# React js Redux Restful Boostrap Example
 
-React js application with restful calls. 
+Starter kit to apollo client
+This repositorty is related to the backend apollo service.
 
-Here are the core libaries that was used to implement the application. 
+## Apollo Service
+
+https://github.com/ishouty/apollo-express-graphql-mongo-backend-api-starter-project
+
+Here are the core libaries that was used to implement the application.
 
 ## React Js (16.8.4)
+
 https://reactjs.org/
+
+## Apollo Client
+
+https://www.apollographql.com/docs/react
+
 ## Axios
+
 https://github.com/axios/axios
+
 ## Redux-form (8.0)
+
 https://redux-form.com/7.1.1/
+
 ## React-router
+
 https://github.com/ReactTraining/react-router
-## Redux 
+
+## Redux
+
 http://redux.js.org/docs/basics/UsageWithReact.html
-## React Bootstrap 
+
+## React Bootstrap
+
 https://react-bootstrap.github.io/
-## Gulp 
+
+## Gulp
+
 https://gulpjs.com/
+
 ## Webpack (4)
+
 https://webpack.js.org/
+
 ## Less
+
 http://lesscss.org/
-## API Calls 
+
+## API Calls
+
 https://randomuser.me/
+
 ## Jest (24.3.0)
+
 https://facebook.github.io/jest/blog/2016/09/01/jest-15.html
-## Enzyme 
+
+## Enzyme
+
 https://github.com/airbnb/enzyme
 
 ## Structure
 
 ```
-build // all the development files compiled 
+build // all the development files compiled
 dist // the distribution version for production environment
 src // source of application
-app // source of application 
-    actions //all actions sent to store 
-    assets // all various assets for application 
-           css //bootstrap base 
+app // source of application
+    actions //all actions sent to store
+    assets // all various assets for application
+           css //bootstrap base
            html //the default html which gets compiled to build via webpack plugin
-           images // all images used within the application 
-           less // all the various less components for react. this can be done differently but preffered having this structure. 
-    components // all the core react components 
-    config // config for different environments 
-    constants // all constants of reducers and text 
+           images // all images used within the application
+           less // all the various less components for react. this can be done differently but preffered having this structure.
+    components // all the core react components
+    config // config for different environments
+    constants // all constants of reducers and text
     containers // core layouts
-    middlewear // middlewear used before the store 
-    reducers //intital state of the stores and state 
+    middlewear // middlewear used before the store
+    reducers //intital state of the stores and state
     store // the core store of the application
-    subscribers //listen for changes within store 
-    utils  // utils which are used for components 
-    test - unit tests (wip) 
+    subscribers //listen for changes within store
+    utils  // utils which are used for components
+    test - unit tests (wip)
 ```
 
 ## Install
 
-Install Node 
+Install Node
 https://nodejs.org/en/download/
-    
+  
 Before installing Node, use NVM to allow multiple versions of Node on the develop/build environment.
 https://github.com/creationix/nvm
 
@@ -68,6 +99,7 @@ https://github.com/creationix/nvm
 There is a file `.nvmrc` in the project root that contains the Node version to use.
 
 Use the Node with the version of project
+
 ```
 nvm use
 
@@ -78,14 +110,16 @@ npm install
 npm install --global gulp-cli
 ```
 
-### Test Driven Development 
+### Test Driven Development
+
 Using Jest for unit testing framework and enyzme all files will be locally within the folder structure.
 
 ### Development HMR Build Development
+
 Will compile into memory which is used to make changes directly
 
 NOTE: please run the `gulp build-dev` first which compiles the assets and html files and cleans directory
- 
+
 ```
 ENVIRONMENT=local gulp
 
@@ -97,39 +131,47 @@ ENVIRONMENT=production gulp
 ```
 
 ### Build
-### Build Compiled Files : Development/local/Staging 
 
-Will compile to to a build directory 
-```
+### Build Compiled Files : Development/local/Staging
 
-npm run build-dev 
-
+Will compile to to a build directory
 
 ```
 
-### Build Compiled Files : Staging/Production 
+npm run build-dev
 
-Will compile to to a build distributed version 
-
-```
-npm run build-prod 
 
 ```
 
-### Improvements 
-* Chucking files to increase performance - load core bundle and load others after 
-* Improve jest testing 
+### Build Compiled Files : Staging/Production
 
+Will compile to to a build distributed version
 
-### Cache Busting 
-All of the javascript files and css files will be concatenated and provided a version which will clear the cache issues 
-on Browsers 
+```
+npm run build-prod
 
-### Latest Blogs on main libraries 
+```
+
+### Improvements
+
+- Chucking files to increase performance - load core bundle and load others after
+- Improve jest coverage of components - testing
+- treeshaking - remove javascript which are not used
+- code splitting
+- Server side rendering instead of making the core bundle large
+- improvement of first content paint via inline css
+- source assets from CDN
+
+### Cache Busting
+
+All of the javascript files and css files will be concatenated and provided a version which will clear the cache issues
+on Browsers
+
+### Latest Blogs on main libraries
 
 https://facebook.github.io/react/blog/2016/03/29/react-v0.14.8.html
 
-### Debugging tools 
+### Debugging tools
 
 https://facebook.github.io/react-native/docs/debugging.html
 
@@ -139,6 +181,6 @@ https://github.com/zalmoxisus/remote-redux-devtools
 
 https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en-GB
 
-### ie tools 
+### ie tools
 
 http://helpdeskgeek.com/windows-7/windows-7-hosts-file/

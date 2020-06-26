@@ -1,9 +1,9 @@
-import React, { Component } from "react"
+import React, { Component } from 'react'
 
-import lightBaseTheme from "material-ui/styles/baseThemes/lightBaseTheme";
-import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
-import MuiThemeProvider from "material-ui/styles/MuiThemeProvider";
-import getMuiTheme from "material-ui/styles/getMuiTheme";
+import lightBaseTheme from 'material-ui/styles/baseThemes/lightBaseTheme'
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 
 export default function withMaterialUI(ComposedComponent) {
   return class MaterialUI extends Component {
@@ -15,7 +15,6 @@ export default function withMaterialUI(ComposedComponent) {
     static childContextTypes = {
       muiTheme: React.PropTypes.object
     }
-
 
     getChildContext() {
       return {

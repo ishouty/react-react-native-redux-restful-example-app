@@ -1,5 +1,5 @@
-import * as urls from "../config/urls"
-import { defaultParams as defaultFetchParams } from "../utils/fetch"
+import * as urls from '../config/urls'
+import { defaultParams as defaultFetchParams } from '../utils/fetch'
 
 export default function request({ dispatch }) {
   return (next) => async (action) => {
@@ -15,7 +15,7 @@ export default function request({ dispatch }) {
       payload: payload
     })
 
-  /*  fetchParams = {
+    /*  fetchParams = {
       ...defaultFetchParams,
       ...fetchParams
     }*/
@@ -28,13 +28,13 @@ export default function request({ dispatch }) {
     if (response.status >= 200 && response.status < 300) {
       dispatch({
         type: SUCCESS,
-        payload: fetchParams.method === "delete" ? payload : json
+        payload: fetchParams.method === 'delete' ? payload : json
       })
     } else {
       dispatch({
         type: FAILURE,
         error: true,
-        payload: fetchParams.method === "delete" ? payload : json
+        payload: fetchParams.method === 'delete' ? payload : json
       })
     }
   }

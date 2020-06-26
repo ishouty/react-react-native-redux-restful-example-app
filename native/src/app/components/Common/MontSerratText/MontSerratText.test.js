@@ -4,7 +4,9 @@ import { MontSerratText } from './MontSerratText'
 import renderer from 'react-test-renderer'
 
 it('renders component correctly', () => {
-    const tree = renderer.create(<MontSerratText>Snapshot test!</MontSerratText>).toJSON();
+  const tree = renderer
+    .create(<MontSerratText>Snapshot test!</MontSerratText>)
+    .toJSON()
 
-    expect(tree).toMatchSnapshot();
-});
+  expect(tree).toMatchSnapshot()
+})
