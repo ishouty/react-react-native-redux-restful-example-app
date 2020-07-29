@@ -1,0 +1,33 @@
+{
+  "rootDir": "../",
+  "roots": ["<rootDir>/src/app/"],
+  "setupFiles": [
+    "<rootDir>/tests/setupTests.js",
+    "jest-localstorage-mock"
+  ],
+  "verbose": true,
+  "modulePaths": ["<rootDir>"],
+  "coveragePathIgnorePatterns": ["/node_modules/"],
+  "collectCoverage": true,
+  "coverageDirectory": "test-coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 0,
+      "functions": 0,
+      "lines": 0,
+      "statements": 0
+    }
+  },
+  "globals": {
+    "__DEVELOPMENT__": true,
+    "__DEVTOOLS__": false
+  },
+  "testEnvironment": "node",
+  "moduleNameMapper": {
+    ".+\\.(css|styl|less|sass|scss|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "identity-obj-proxy",
+    ".+\\.(jpg|jpeg|png|gif)$": "<rootDir>/src/app/mocks/filemock.js",
+    "^Config$": "<rootDir>/src/app/mocks/mockConfig.json"
+  },
+  "coverageReporters": ["json", "lcov", "text", "json-summary"],
+  "resetMocks": true
+}

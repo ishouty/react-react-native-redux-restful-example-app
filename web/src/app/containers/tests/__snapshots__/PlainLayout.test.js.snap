@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlainLayout Should match snapshot and render main within PlainLayout 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <PlainLayout>
+    <div
+      id="layout"
+    >
+      <div
+        id="main"
+      >
+        <Connect(Banner)>
+          <Banner
+            banner={
+              Object {
+                "fail": false,
+                "message": "",
+                "success": false,
+              }
+            }
+            dispatch={[Function]}
+          >
+            <div />
+          </Banner>
+        </Connect(Banner)>
+        hello plain layout
+      </div>
+    </div>
+  </PlainLayout>
+</Provider>
+`;

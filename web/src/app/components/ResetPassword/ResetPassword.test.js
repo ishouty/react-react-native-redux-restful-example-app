@@ -1,5 +1,5 @@
 import React, { Component } from 'React'
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
 import ResetPassword from './ResetPassword'
 

@@ -1,6 +1,4 @@
-import moment from 'moment'
 import MobileDetect from 'mobile-detect'
-import * as constants from '../constants/index'
 
 export const maxLength = (max, value) => {
   value && value.length > max

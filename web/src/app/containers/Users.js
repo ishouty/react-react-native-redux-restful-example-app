@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Col } from 'react-bootstrap'
-
 import { FILTER_USERS } from '../constants'
-//components
+
 import { Banner } from '../components/Common/Common'
 import UsersList from '../components/UsersList/UsersList'
+import User from '../components/User/User'
 
 export const OPEN_ALL_USERS = 0
 export const OPEN_FEMALE_USERS = 1
@@ -15,6 +15,32 @@ import {
   DEFAULT_START_PAGE,
   DEFAULT_PAGE_SIZE
 } from '../actions/users'
+import { Query } from 'react-apollo'
+import { GET_USERS } from '../gql/Users'
+
+const ApolloUserItem = () => {
+  return (
+    <Query query={GET_USERS}>
+      {({ loading, error, data }) => {
+        if (loading || !data) {
+          return <div>Loading Users ...</div>
+        }
+
+        if (data.users) {
+          return data.users.map((user, index) => {
+            return (
+              <User
+                user={user}
+                key={`user-item-${index}`}
+                displayAvatar={false}
+              />
+            )
+          })
+        }
+      }}
+    </Query>
+  )
+}
 
 @connect((store) => {
   return {
@@ -44,20 +70,10 @@ export default class Users extends Component {
           )
         )
         break
-      case OPEN_ALL_USERS:
-      default:
-        dispatch(
-          getUsersList(
-            DEFAULT_START_PAGE,
-            DEFAULT_PAGE_SIZE,
-            FILTER_USERS.default
-          )
-        )
-        break
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.callUsersList()
   }
 
@@ -70,7 +86,7 @@ export default class Users extends Component {
 
     switch (route.open) {
       case OPEN_ALL_USERS:
-        return <UsersList filter={FILTER_USERS.default} />
+        return <ApolloUserItem />
       case OPEN_FEMALE_USERS:
         return <UsersList filter={FILTER_USERS.gender.female} />
       case OPEN_MALE_USERS:

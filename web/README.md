@@ -1,15 +1,35 @@
-# React js Redux Restful Boostrap Example
+# React js Apollo Client Redux Restful Boostrap Example
 
-Starter kit to apollo client
+Starter kit to apollo client. You will need two run both respositories to fully get this working.
+
 This repositorty is related to the backend apollo service.
 
-## Apollo Service
+https://github.com/ishouty/apollo-express-graphql-mongo-backend-api-starter-project.git
 
-https://github.com/ishouty/apollo-express-graphql-mongo-backend-api-starter-project
+## Features of client
 
+- Appollo client
+  - list of users
+  - list of products
+- redux forms
+  - login form
+    - client validation
+- Pagination
+- Integrating api with front end
+  - login form
+  - list of users
+- Navigation menu
+  - login
+  - logoff
+  - list of users
+- Notification banner
+  - bad response
+  - bad request
+
+Client application core technology stack:
 Here are the core libaries that was used to implement the application.
 
-## React Js (16.8.4)
+## React Js (16.9.0)
 
 https://reactjs.org/
 
@@ -21,7 +41,7 @@ https://www.apollographql.com/docs/react
 
 https://github.com/axios/axios
 
-## Redux-form (8.0)
+## Redux-form
 
 https://redux-form.com/7.1.1/
 
@@ -83,18 +103,18 @@ app // source of application
     store // the core store of the application
     subscribers //listen for changes within store
     utils  // utils which are used for components
-    test - unit tests (wip)
+    tests // config for unit tests
 ```
 
 ## Install
 
 Install Node
 https://nodejs.org/en/download/
-  
+
 Before installing Node, use NVM to allow multiple versions of Node on the develop/build environment.
 https://github.com/creationix/nvm
 
-### Version of Node used `8.5.0`
+### Version of Node used `12.4.1`
 
 There is a file `.nvmrc` in the project root that contains the Node version to use.
 
@@ -114,11 +134,49 @@ npm install --global gulp-cli
 
 Using Jest for unit testing framework and enyzme all files will be locally within the folder structure.
 
+To run all the unit tests within the application use :
+
+```
+npm run test,
+```
+
+## Developing unit tests
+
+If you are developing and would like to see your tests being watched use
+
+```
+npm run test:watch
+```
+
+you can watch a specific file by running this command
+
+```
+npm run test:watch example.spec.js
+```
+
+## Updating Snapshots
+
+```
+npm run test:update-snapshot
+```
+
+## Coverage of unit tests
+
+To check the coverage of files being covered by unit tests you are write this command
+
+```
+npm run jest --coverage,
+```
+
+this will also generate reports on the test-coverage folder
+
+Note: please make sure you have the right permissions for the folder so the library can write to it.
+
 ### Development HMR Build Development
 
 Will compile into memory which is used to make changes directly
 
-NOTE: please run the `gulp build-dev` first which compiles the assets and html files and cleans directory
+NOTE: please run the `gulp dev-webpack` first which compiles the assets and html files and cleans directory
 
 ```
 ENVIRONMENT=local gulp
@@ -137,10 +195,7 @@ ENVIRONMENT=production gulp
 Will compile to to a build directory
 
 ```
-
-npm run build-dev
-
-
+npm run dev-webpack
 ```
 
 ### Build Compiled Files : Staging/Production
@@ -148,16 +203,22 @@ npm run build-dev
 Will compile to to a build distributed version
 
 ```
-npm run build-prod
-
+npm run prod-webpack
 ```
+
+### Debugging
+
+redux dev tools is available for you to debug any issues with state.
+
+You will need to download chrome extension in order to use this and see whats in your state and what calls are being use.
 
 ### Improvements
 
 - Chucking files to increase performance - load core bundle and load others after
 - Improve jest coverage of components - testing
+- integrating testing of components - cypress
 - treeshaking - remove javascript which are not used
-- code splitting
+- code splitting - Not loading all code in one bundle
 - Server side rendering instead of making the core bundle large
 - improvement of first content paint via inline css
 - source assets from CDN

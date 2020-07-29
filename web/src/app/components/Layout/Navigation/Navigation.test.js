@@ -1,16 +1,17 @@
-import React, {Component} from "react"
-import Navigation from "./Navigation"
-import {shallow} from "enzyme"
+import React, { Component } from 'react'
+import Navigation from './Navigation'
+import { shallow } from 'enzyme'
 import toJson from 'enzyme-to-json'
-import {initialState} from "../../../reducers/navigation"
+import { initialState } from '../../../reducers/navigation'
 
-describe('Navigation', ()=> {
+describe('Navigation', () => {
+  test('Navigation Component renders Links', () => {
+    const component = shallow(
+      <Navigation
+        navigationLinks={initialState.navigationLinks.links}
+      />
+    )
 
-    test('Navigation Component renders Links', ()=> {
-
-        const component = shallow(<Navigation navigationLinks={initialState.navigationLinks.links}/>)
-
-        expect(component.find('li').length).toBe(4)
-    })
-
+    expect(component.find('li').length).toBe(5)
+  })
 })

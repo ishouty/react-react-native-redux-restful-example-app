@@ -7,7 +7,7 @@ class ProfileAvatarName extends Component {
   render() {
     const { profile, size, nav } = this.props
 
-    return (
+    return profile.picture ? (
       <div className="inline">
         <div className={`profile-container`}>
           <ProfileAvatar
@@ -22,7 +22,7 @@ class ProfileAvatarName extends Component {
           </div>
         </div>
       </div>
-    )
+    ) : null
   }
 }
 

@@ -25,6 +25,12 @@ export const initialState = {
       },
       {
         title: NavigationLinkText.item4,
+        href: '/app/products',
+        className: 'nav-products',
+        icon: 'fa-newspaper-o'
+      },
+      {
+        title: NavigationLinkText.item5,
         href: '/sign-out',
         className: 'nav-sign-out',
         icon: 'fa-sign-out'

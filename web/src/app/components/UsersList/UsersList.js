@@ -17,7 +17,7 @@ import { MatchedQuestionsText } from '../../constants/text/text'
     totalPages: store.users.usersTotalPages
   }
 })
-class Users extends Component {
+class UsersList extends Component {
   render() {
     const { dispatch, filter, users, page, totalPages } = this.props
 
@@ -35,8 +35,8 @@ class Users extends Component {
   }
 }
 
-Users.propTypes = {
+UsersList.propTypes = {
   users: PropTypes.object
 }
 
-export default Users
+export default UsersList

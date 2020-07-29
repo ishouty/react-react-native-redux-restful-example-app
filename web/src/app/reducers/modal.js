@@ -14,7 +14,10 @@ export const initialState = {
         phone: '',
         picture: '',
         location: {
-          street: '',
+          street: {
+            number: '',
+            street: ''
+          },
           city: '',
           postcode: ''
         }

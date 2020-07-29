@@ -5,4 +5,5 @@ dist
 build
 .idea
 *.iml
-
+test-coverage
+coverage

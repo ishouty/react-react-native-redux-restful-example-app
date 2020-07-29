@@ -86,14 +86,13 @@ const renderFieldText = ({
 class LoadingButton extends Component {
   render() {
     const { loading, show } = this.props
+
     const showLoading =
       loading.loading.common && (show === undefined || show)
 
     return (
       <div className="loading-btn-container">
-        {showLoading ? (
-          <CircularProgress color="#000" size={50} thickness={3} />
-        ) : null}
+        {showLoading ? <span>Loading ...</span> : null}
       </div>
     )
   }

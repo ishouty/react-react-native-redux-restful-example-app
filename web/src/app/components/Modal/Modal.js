@@ -15,6 +15,7 @@ class ModalBox extends React.Component {
   render() {
     const { modal, dispatch } = this.props
     const { details } = modal.modal.userDetails
+
     const closeModal = () => {
       dispatch({ type: actionTypes.CLEAR_ALL_MODAL })
     }
@@ -43,7 +44,6 @@ class ModalBox extends React.Component {
                 {UsersText.gender}: {details.gender}{' '}
               </span>
             </div>
-
             <div>
               <span>
                 <i
@@ -65,7 +65,7 @@ class ModalBox extends React.Component {
 
             <div>
               <span>
-                {UsersText.street}: {details.location.street}
+                {UsersText.street}: {details.location.street.name}
               </span>
             </div>
 

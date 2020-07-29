@@ -1,0 +1,263 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AppLayout Should match snapshot and render main within AppLayout 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <MainLayout
+    main="hello main"
+  >
+    <div
+      id="main-app-layout"
+    >
+      <Connect(Header)>
+        <Header
+          dispatch={[Function]}
+          navigation={
+            Array [
+              Object {
+                "className": "nav-users",
+                "href": "/app/users",
+                "icon": "fa-user-circle-o",
+                "title": "Internal Users (Apollo)",
+              },
+              Object {
+                "className": "nav-female-users",
+                "href": "/app/female-users",
+                "icon": "fa-female",
+                "title": "Female Users (Redux)",
+              },
+              Object {
+                "className": "nav-male-users",
+                "href": "/app/male-users",
+                "icon": "fa-male",
+                "title": "Male Users (Redux)",
+              },
+              Object {
+                "className": "nav-products",
+                "href": "/app/products",
+                "icon": "fa-newspaper-o",
+                "title": "Products (Apollo)",
+              },
+              Object {
+                "className": "nav-sign-out",
+                "href": "/sign-out",
+                "icon": "fa-sign-out",
+                "title": "Sign Out",
+              },
+            ]
+          }
+        >
+          <div
+            className="header-container"
+          >
+            <Row
+              bsClass="row"
+              className="header-body"
+              componentClass="div"
+            >
+              <div
+                className="header-body row"
+              >
+                <Navigation
+                  navigationLinks={
+                    Array [
+                      Object {
+                        "className": "nav-users",
+                        "href": "/app/users",
+                        "icon": "fa-user-circle-o",
+                        "title": "Internal Users (Apollo)",
+                      },
+                      Object {
+                        "className": "nav-female-users",
+                        "href": "/app/female-users",
+                        "icon": "fa-female",
+                        "title": "Female Users (Redux)",
+                      },
+                      Object {
+                        "className": "nav-male-users",
+                        "href": "/app/male-users",
+                        "icon": "fa-male",
+                        "title": "Male Users (Redux)",
+                      },
+                      Object {
+                        "className": "nav-products",
+                        "href": "/app/products",
+                        "icon": "fa-newspaper-o",
+                        "title": "Products (Apollo)",
+                      },
+                      Object {
+                        "className": "nav-sign-out",
+                        "href": "/sign-out",
+                        "icon": "fa-sign-out",
+                        "title": "Sign Out",
+                      },
+                    ]
+                  }
+                >
+                  <Col
+                    bsClass="col"
+                    className="navigation-container"
+                    componentClass="div"
+                    id="main-navigation"
+                    sm={7}
+                  >
+                    <div
+                      className="navigation-container col-sm-7"
+                      id="main-navigation"
+                    >
+                      <ul>
+                        <li
+                          key="0"
+                        >
+                          <Link
+                            activeClassName="active"
+                            className="nav-users"
+                            onlyActiveOnIndex={false}
+                            style={Object {}}
+                            to="/app/users"
+                          >
+                            <a
+                              className="nav-users"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="fa fa-user-circle-o"
+                              />
+                              <span>
+                                Internal Users (Apollo)
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                        <li
+                          key="1"
+                        >
+                          <Link
+                            activeClassName="active"
+                            className="nav-female-users"
+                            onlyActiveOnIndex={false}
+                            style={Object {}}
+                            to="/app/female-users"
+                          >
+                            <a
+                              className="nav-female-users"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="fa fa-female"
+                              />
+                              <span>
+                                Female Users (Redux)
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                        <li
+                          key="2"
+                        >
+                          <Link
+                            activeClassName="active"
+                            className="nav-male-users"
+                            onlyActiveOnIndex={false}
+                            style={Object {}}
+                            to="/app/male-users"
+                          >
+                            <a
+                              className="nav-male-users"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="fa fa-male"
+                              />
+                              <span>
+                                Male Users (Redux)
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                        <li
+                          key="3"
+                        >
+                          <Link
+                            activeClassName="active"
+                            className="nav-products"
+                            onlyActiveOnIndex={false}
+                            style={Object {}}
+                            to="/app/products"
+                          >
+                            <a
+                              className="nav-products"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="fa fa-newspaper-o"
+                              />
+                              <span>
+                                Products (Apollo)
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                        <li
+                          key="4"
+                        >
+                          <Link
+                            activeClassName="active"
+                            className="nav-sign-out"
+                            onlyActiveOnIndex={false}
+                            style={Object {}}
+                            to="/sign-out"
+                          >
+                            <a
+                              className="nav-sign-out"
+                              onClick={[Function]}
+                              style={Object {}}
+                            >
+                              <i
+                                aria-hidden="true"
+                                className="fa fa-sign-out"
+                              />
+                              <span>
+                                Sign Out
+                              </span>
+                            </a>
+                          </Link>
+                        </li>
+                      </ul>
+                    </div>
+                  </Col>
+                </Navigation>
+              </div>
+            </Row>
+          </div>
+        </Header>
+      </Connect(Header)>
+      <div
+        id="main-app"
+      >
+        <div>
+          hello main
+        </div>
+      </div>
+    </div>
+  </MainLayout>
+</Provider>
+`;

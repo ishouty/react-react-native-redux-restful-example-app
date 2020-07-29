@@ -1,7 +1,9 @@
 export const RouteText = {
   all: 'All Users',
   maleUsers: 'Male Users',
-  femaleUsers: 'Female Users'
+  femaleUsers: 'Female Users',
+  products: 'Products',
+  userDetails: 'User Details'
 }
 
 export const LoginText = {
@@ -29,7 +31,15 @@ export const UsersText = {
   address: 'Address Details',
   street: 'Street',
   city: 'City',
-  postcode: 'Post Code'
+  postcode: 'Post Code',
+  userType: 'Role'
+}
+
+export const userDetails = {
+  firstName: 'First Name',
+  lastName: 'Last Name',
+  userType: 'User Role',
+  password: 'Password'
 }
 
 export const FooterText = {
@@ -81,10 +91,11 @@ export const PageNotFoundText = {
 }
 
 export const NavigationLinkText = {
-  item1: 'All Users',
-  item2: 'Female Users',
-  item3: 'Male Users',
-  item4: 'Sign Out'
+  item1: 'Internal Users (Apollo)',
+  item2: 'Female Users (Redux)',
+  item3: 'Male Users (Redux)',
+  item4: 'Products (Apollo)',
+  item5: 'Sign Out'
 }
 
 export const MatchedQuestionsText = {

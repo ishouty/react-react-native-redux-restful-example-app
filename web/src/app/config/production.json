@@ -3,5 +3,9 @@
   "CONTACT": "http://www.linkedin.com/in/andy-nguyen84",
   "API_URL": "http://localhost:8080/api",
   "APOLLO_URL": "http://localhost:8080/graphql",
-  "MIXPANEL_TOKEN": "789732897298"
+  "THIRD_PARTY_API": "https://randomuser.me",
+  "MIXPANEL_TOKEN": "789732897298",
+  "CLIENT_ID": "android",
+  "GRANT_TYPE_PASSWORD": "password",
+  "CLIENT_SECRET": "SomeRandomCharsAndNumbers"
 }

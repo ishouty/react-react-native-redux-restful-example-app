@@ -13,7 +13,6 @@ import PropTypes from 'prop-types'
 class ListPageLoader extends Component {
   loadPage(page) {
     const { dispatch, loadFunction } = this.props
-
     dispatch(loadFunction(page))
 
     this.loadingPage = page

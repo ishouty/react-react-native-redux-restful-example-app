@@ -4,9 +4,9 @@ import ProfileAvatarName from '../ProfileAvatarName/ProfileAvatarName'
 import PropTypes from 'prop-types'
 import { Row, Col } from 'react-bootstrap'
 
-class UsersList extends Component {
+class User extends Component {
   render() {
-    const { user, detail } = this.props
+    const { user, detail, displayAvatar } = this.props
 
     return (
       <Col
@@ -15,44 +15,57 @@ class UsersList extends Component {
         }
       >
         <Row>
-          <ProfileAvatarName profile={user} />
-
+          {displayAvatar && <ProfileAvatarName profile={user} />}
+          {user.firstName && (
+            <div>
+              <i className="fa fa-user" aria-hidden="true"></i>{' '}
+              {user.firstName} {user.lastName}
+            </div>
+          )}
           <h5>{UsersText.personalDetailsTitle}</h5>
+          {user.email && (
+            <div>
+              <span>
+                <i
+                  className="fa fa-envelope-o"
+                  aria-hidden="true"
+                ></i>{' '}
+                {UsersText.email}: {user.email}
+              </span>
+            </div>
+          )}
 
-          <div>
-            {user.gender == 'male' ? (
-              <i className="fa fa-male" aria-hidden="true"></i>
-            ) : (
-              <i className="fa fa-female" aria-hidden="true"></i>
-            )}
-            <span>
-              {' '}
-              {UsersText.gender}: {user.gender}{' '}
-            </span>
-          </div>
+          {user.userType && (
+            <div>
+              <span>
+                <i className="fa fa-id-card" aria-hidden="true"></i>{' '}
+                {UsersText.userType}: {user.userType}
+              </span>
+            </div>
+          )}
 
-          <div>
-            <span>
-              <i className="fa fa-envelope-o" aria-hidden="true"></i>{' '}
-              {UsersText.email}: {user.email}
-            </span>
-          </div>
-
-          <div>
-            <span>
-              <i className="fa fa-phone" aria-hidden="true"></i>{' '}
-              {UsersText.tel}: {user.cell}
-            </span>
-          </div>
+          {user.cell && (
+            <div>
+              <span>
+                <i className="fa fa-phone" aria-hidden="true"></i>{' '}
+                {UsersText.tel}: {user.cell}
+              </span>
+            </div>
+          )}
         </Row>
       </Col>
     )
   }
 }
 
-UsersList.propTypes = {
-  user: PropTypes.object.isRequired,
-  detail: PropTypes.string
+User.defaultProps = {
+  displayAvatar: true
 }
 
-export default UsersList
+User.propTypes = {
+  user: PropTypes.object.isRequired,
+  detail: PropTypes.string,
+  displayAvatar: PropTypes.bool
+}
+
+export default User

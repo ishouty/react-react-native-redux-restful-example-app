@@ -1,5 +1,5 @@
 import * as actionTypes from './actionTypes'
-import { getinstanceAxios } from '../actions/auth'
+import { getinstanceThirdPartyAxios } from '../services/http'
 
 export const DEFAULT_START_PAGE = 1
 export const DEFAULT_PAGE_SIZE = 10
@@ -28,7 +28,7 @@ export function getUsersList(
         break
     }
 
-    return getinstanceAxios()
+    return getinstanceThirdPartyAxios()
       .get(`/api/?page=${page}&results=${size}${filter}`)
       .then((response) => {
         dispatch({

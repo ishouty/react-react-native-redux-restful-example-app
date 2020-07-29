@@ -1,6 +1,6 @@
 import * as actionTypes from '../actions/actionTypes'
 
-const initialState = {
+export const initialState = {
   users: [],
   usersPage: 1,
   usersTotalPages: 100
