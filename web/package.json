@@ -59,7 +59,7 @@
     "@babel/preset-stage-1": "^7.0.0",
     "ajv": "^6.10.0",
     "apollo-boost": "^0.4.9",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "babel-eslint": "^4.1.8",
     "babel-jest": "^24.3.0",
     "babel-loader": "^8.0.5",
